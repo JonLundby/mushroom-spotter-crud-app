@@ -1,0 +1,17 @@
+body {
+    background-color:rgb(29, 106, 43);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color:rgba(66, 213, 93, 0.597);
+    height: 100px;
+    box-shadow: 2px 3px 12px black;
+}
+
+h1 {
+    margin: auto;
+    vertical-align: baseline;
+}
+
