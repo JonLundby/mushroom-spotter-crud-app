@@ -1,0 +1,24 @@
+{
+    "mushroom": {
+        "00": {
+            "name": "horse mushroom",
+            "namelatin": "Abortiporus biennis",
+            "image": "url",
+            "map": "url",
+            "areafound": "some area..",
+            "description": "A general description of the mushroom",
+            "recognition": "description of visible characteristics for recognition",
+            "edible": false,
+            "poisonous": true,
+            "seasonstart": "May",
+            "seasonend": "October",
+            "confusedwith": "Other mushrooms that looks like this one but isn't"
+        }
+    },
+
+    "user": {
+        "firstname": "Anders",
+        "lastname": "Andersen",
+        "hometown": "Hadsund"
+    }
+}
