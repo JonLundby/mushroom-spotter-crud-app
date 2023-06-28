@@ -7,9 +7,7 @@ window.addEventListener("load", startApp);
 
 async function startApp() {
   posts = await getposts();
-  console.log(posts)
 
-  //posts.forEach(generatePost);
   showSpottersPosts(posts);
 }
 
@@ -37,11 +35,10 @@ function preparePosts(data) {
 }
 
 function showSpottersPosts(posts) {
-    document.querySelector("#spotter-posts-container").innerHTML = "";
+  document.querySelector("#spotter-posts-container").innerHTML = "";
   for (const post of posts) {
-    console.log(post);
-      generatePost(post);
-    }
+    generatePost(post);
+  }
 }
 
 function generatePost(postObject) {
