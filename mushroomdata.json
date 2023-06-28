@@ -1,24 +1,44 @@
 {
-    "mushroom": {
-        "00": {
-            "name": "horse mushroom",
-            "namelatin": "Abortiporus biennis",
-            "image": "url",
-            "map": "url",
-            "areafound": "some area..",
-            "description": "A general description of the mushroom",
-            "recognition": "description of visible characteristics for recognition",
-            "edible": false,
-            "poisonous": true,
-            "seasonstart": "May",
-            "seasonend": "October",
-            "confusedwith": "Other mushrooms that looks like this one but isn't"
-        }
+    "post": {
+      "00": {
+        "mushroomname": "horse mushroom",
+        "namelatin": "Abortiporus biennis",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Agaricus_arvensis_-_livadski_%C5%A1ampinjon.jpg",
+        "map": "url",
+        "areafound": "some area..",
+        "description": "A general description of the mushroom",
+        "recognition": "description of visible characteristics for recognition",
+        "edible": true,
+        "poisonous": false,
+        "seasonstart": "May",
+        "seasonend": "October",
+        "confusedwith": "Other mushrooms that looks like this one but isn't",
+        "spotter": []
+      },
+      "01": {
+        "mushroomname": "Orange Grisette",
+        "namelatin": "Amanita crocea",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Amanita-fulva.jpg",
+        "map": "url",
+        "areafound": "some area..",
+        "description": "A general description of the mushroom",
+        "recognition": "description of visible characteristics for recognition",
+        "edible": true,
+        "poisonous": false,
+        "seasonstart": "May",
+        "seasonend": "October",
+        "confusedwith": "Other mushrooms that looks like this one but isn't",
+        "spotter": []
+      }
     },
 
-    "user": {
+    "spotter": {
+      "00": {
         "firstname": "Anders",
         "lastname": "Andersen",
-        "hometown": "Hadsund"
+        "hometown": "Hadsten"
+      }
     }
+
+    
 }

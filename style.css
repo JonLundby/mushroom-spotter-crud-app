@@ -1,17 +1,22 @@
 :root {
      --header-font-family: "Moirai One", cursive;
+     --body-color: rgb(31, 99, 43);
+     --secondary-main-color: rgba(90, 203, 72, 0.501);
 }
 
 body {
-    background-color:rgb(29, 106, 43);
+    background-color:var(--body-color);
 }
 
 header {
     display: flex;
     justify-content: center;
-    background-color:rgba(66, 213, 93, 0.597);
+    background-color:var(--secondary-main-color);
     height: 100px;
+    margin: 20px;
+    margin-bottom: 50px;
     box-shadow: 2px 3px 12px black;
+    border-radius: 12px;
 }
 
 h1 {
@@ -21,3 +26,23 @@ h1 {
     vertical-align: baseline;
 }
 
+#spotter-posts-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 10px;
+    gap: 12px;
+    text-align: center;
+}
+
+#spotter-posts-container > article {
+    background-color: var(--secondary-main-color);
+    box-shadow: 1px 2px 5px black;
+}
+
+#spotter-posts-container > article:hover {
+    box-shadow: 2px 2px 12px black;
+}
+
+img {
+    width: 30vw;
+}
