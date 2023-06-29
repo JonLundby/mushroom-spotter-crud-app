@@ -18,11 +18,19 @@
     </header>
 
     <main>
-
-        <section id="spotter-posts-container">
-            <!-- htmlSpotterPost inserts here -->
-        </section>
+      <section id="spotter-posts-container">
+        <!-- htmlSpotterPost inserts here -->
+      </section>
     </main>
+
+    <!-- Dialog/Modal DELETE -->
+    <dialog id="dialog-delete">
+      <h3>Confirm that you want to delete <span id="mushroomname-to-delete"></span></h3>
+      <form action="" method="dialog" id="delete-post-form">
+        <button type="button" class="btn-cancel">cancel</button>
+        <button type="submit">delete</button>
+      </form>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

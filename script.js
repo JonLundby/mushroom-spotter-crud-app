@@ -9,6 +9,10 @@ async function startApp() {
   posts = await getposts();
 
   showSpottersPosts(posts);
+
+  //Eventlisteners
+  document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
+  document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
 }
 
 async function getposts() {
@@ -55,15 +59,37 @@ function generatePost(postObject) {
 
   document.querySelector("#spotter-posts-container").insertAdjacentHTML("beforeend", htmlPost);
   
-  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", updatePost)
-  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", deletePost)
+  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", updatePostClicked)
+  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", deletePostClicked)
 
+  function updatePostClicked() {
+    console.log("updateClicked");
+  }
+  
+  function deletePostClicked() {
+    document.querySelector("#mushroomname-to-delete").textContent = postObject.mushroomname;
+    document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
+    document.querySelector("#dialog-delete").showModal();    
+  }
 }
 
-function updatePost() {
-  console.log("updateClicked");
+function cancelDelete() {
+  console.log("delete canceled!")
+  document.querySelector("#dialog-delete").close();
 }
 
-function deletePost() {
-  console.log("deleteClicked");
+async function executeDelete(event) {
+  console.log("executeDelete called!")
+  const id = event.target.getAttribute("data-id");
+  const response = await deletePost(id);
+
+  if (response.ok) {
+    console.log("mushroom post deleted")
+  }
+}
+
+async function deletePost(id) {
+  const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
+  console.log(response)
+  return response;
 }
