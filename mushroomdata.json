@@ -59,6 +59,36 @@
         "seasonend": "November",
         "confusedwith": "Other mushrooms that looks like this one but isn't",
         "spotter": []
+      },
+      "04": {
+        "mushroomname": "Devil's Bolete",
+        "namelatin": "Rubroboletus satanas",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Devils_Bolete._Boletus_satanoides_-_Flickr_-_gailhampshire.jpg",
+        "map": "url",
+        "areafound": "some area..",
+        "description": "A general description of the mushroom",
+        "recognition": "description of visible characteristics for recognition",
+        "edible": false,
+        "poisonous": true,
+        "seasonstart": "June",
+        "seasonend": "October",
+        "confusedwith": "Other mushrooms that looks like this one but isn't",
+        "spotter": []
+      },
+      "05": {
+        "mushroomname": "King Alfred's Cakes",
+        "namelatin": "Daldinia concentrica",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/King_Alfred%27s_Cakes_%28Daldinia_concentrica%29.jpg",
+        "map": "url",
+        "areafound": "some area..",
+        "description": "A general description of the mushroom",
+        "recognition": "description of visible characteristics for recognition",
+        "edible": false,
+        "poisonous": false,
+        "seasonstart": "January",
+        "seasonend": "January",
+        "confusedwith": "Other mushrooms that looks like this one but isn't",
+        "spotter": []
       }
     },
 
