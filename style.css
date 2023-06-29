@@ -1,9 +1,12 @@
+/* ROOT VARIABLES */
 :root {
      --header-font-family: "Moirai One", cursive;
      --body-color: rgb(31, 99, 43);
      --secondary-main-color: rgba(90, 203, 72, 0.501);
+     --btn-bg-color: rgba(124, 86, 14, 0.781);
 }
 
+/* MAIN ELEMENTS */
 body {
     background-color:var(--body-color);
 }
@@ -26,6 +29,7 @@ h1 {
     vertical-align: baseline;
 }
 
+/* POSTS ELEMENTS */
 #spotter-posts-container{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -47,4 +51,12 @@ img {
     object-fit: scale-down;
     width: 20vw;
     height: 30vh;
+}
+
+button {
+    background-color:var(--btn-bg-color);
+    color: aliceblue;
+    height: 35px;
+    width: 90px;
+    margin: 10px;
 }

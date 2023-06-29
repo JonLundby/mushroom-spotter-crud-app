@@ -48,8 +48,22 @@ function generatePost(postObject) {
                             <h3>${postObject.namelatin}</h3>
                             <img src=${postObject.image}>
                             <p>${postObject.areafound}</p>
+                            <button class="btn-update">Update</button>
+                            <button class="btn-delete">Delete</button>
                         </article>
     `;
 
   document.querySelector("#spotter-posts-container").insertAdjacentHTML("beforeend", htmlPost);
+  
+  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", updatePost)
+  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", deletePost)
+
+}
+
+function updatePost() {
+  console.log("updateClicked");
+}
+
+function deletePost() {
+  console.log("deleteClicked");
 }
