@@ -6,9 +6,8 @@ let posts;
 window.addEventListener("load", startApp);
 
 async function startApp() {
-  posts = await getposts();
-
-  showSpottersPosts(posts);
+  //updating the posts grid
+  updatePostGrid();
 
   //Eventlisteners
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
@@ -36,6 +35,12 @@ function preparePosts(data) {
     }
   }
   return postsArr;
+}
+
+async function updatePostGrid() {
+  posts = await getposts();
+
+  showSpottersPosts(posts);
 }
 
 function showSpottersPosts(posts) {
@@ -85,6 +90,7 @@ async function executeDelete(event) {
 
   if (response.ok) {
     console.log("mushroom post deleted")
+    updatePostGrid();
   }
 }
 
