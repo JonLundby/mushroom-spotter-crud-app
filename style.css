@@ -9,6 +9,7 @@
 /* MAIN ELEMENTS */
 body {
     background-color:var(--body-color);
+    user-select: none;
 }
 
 header {
@@ -27,6 +28,13 @@ h1 {
     font-size: 3.5rem;
     margin: auto;
     vertical-align: baseline;
+}
+
+/* OPTION BUTTONS CONTAINER */
+#option-btns-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 50px;
 }
 
 /* POSTS ELEMENTS */
