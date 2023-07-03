@@ -68,3 +68,42 @@ button {
     width: 90px;
     margin: 10px;
 }
+
+#dialog-detail-view {
+    background-color: var(--body-color);
+    width: 80%;
+    height: 80%;
+}
+
+/* CLOSE BTN */
+.close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.2;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 18px;
+  content: ' ';
+  height: 40px;
+  width: 3px;
+  background-color: black;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+/*  */

@@ -6,14 +6,14 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Agaricus_arvensis_-_livadski_%C5%A1ampinjon.jpg",
         "map": "url",
         "areafound": "some area..",
-        "description": "A general description of the mushroom",
+        "description": "A general description of Abortiporus biennis",
         "recognition": "description of visible characteristics for recognition",
         "edible": true,
         "poisonous": false,
         "seasonstart": "May",
         "seasonend": "October",
-        "confusedwith": "Other mushrooms that looks like this one but isn't",
-        "spotter": []
+        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
+        "spotter": "01"
       },
       "01": {
         "mushroomname": "Orange Grisette",
@@ -21,14 +21,14 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Amanita-fulva.jpg",
         "map": "url",
         "areafound": "some area..",
-        "description": "A general description of the mushroom",
+        "description": "A general description of Amanita crocea",
         "recognition": "description of visible characteristics for recognition",
         "edible": true,
         "poisonous": false,
         "seasonstart": "July",
         "seasonend": "October",
-        "confusedwith": "Other mushrooms that looks like this one but isn't",
-        "spotter": []
+        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
+        "spotter": "01"
       },
       "02": {
         "mushroomname": "Scarletina Bolete",
@@ -36,14 +36,14 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/BOLETUS_RHODOPURPUREUS_%286083097432%29.jpg",
         "map": "url",
         "areafound": "some area..",
-        "description": "A general description of the mushroom",
+        "description": "A general description of Neoboletus praestigiator",
         "recognition": "description of visible characteristics for recognition",
         "edible": true,
         "poisonous": false,
         "seasonstart": "July",
         "seasonend": "October",
-        "confusedwith": "Other mushrooms that looks like this one but isn't",
-        "spotter": []
+        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
+        "spotter": "00"
       },
       "03": {
         "mushroomname": "Old Man of the Woods",
@@ -51,14 +51,14 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Old_Man_of_the_Woods_-_Strobilomyces_strobilaceus_%2837432117936%29.jpg",
         "map": "url",
         "areafound": "some area..",
-        "description": "A general description of the mushroom",
+        "description": "A general description of Strobilomyces strobilaceus",
         "recognition": "description of visible characteristics for recognition",
         "edible": true,
         "poisonous": false,
         "seasonstart": "July",
         "seasonend": "November",
-        "confusedwith": "Other mushrooms that looks like this one but isn't",
-        "spotter": []
+        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
+        "spotter": "01"
       },
       "04": {
         "mushroomname": "Devil's Bolete",
@@ -66,14 +66,14 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Devils_Bolete._Boletus_satanoides_-_Flickr_-_gailhampshire.jpg",
         "map": "url",
         "areafound": "some area..",
-        "description": "A general description of the mushroom",
+        "description": "A general description of Rubroboletus satanas",
         "recognition": "description of visible characteristics for recognition",
         "edible": false,
         "poisonous": true,
         "seasonstart": "June",
         "seasonend": "October",
-        "confusedwith": "Other mushrooms that looks like this one but isn't",
-        "spotter": []
+        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
+        "spotter": "00"
       },
       "05": {
         "mushroomname": "King Alfred's Cakes",
@@ -81,14 +81,14 @@
         "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/King_Alfred%27s_Cakes_%28Daldinia_concentrica%29.jpg",
         "map": "url",
         "areafound": "some area..",
-        "description": "A general description of the mushroom",
+        "description": "A general description of Daldinia concentrica",
         "recognition": "description of visible characteristics for recognition",
         "edible": false,
         "poisonous": false,
         "seasonstart": "January",
         "seasonend": "January",
-        "confusedwith": "Other mushrooms that looks like this one but isn't",
-        "spotter": []
+        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
+        "spotter": "01"
       }
     },
 
@@ -96,7 +96,12 @@
       "00": {
         "firstname": "Anders",
         "lastname": "Andersen",
-        "hometown": "Hadsten"
+        "hometown": "Agerbæk"
+      },
+      "01": {
+        "firstname": "Børge",
+        "lastname": "Børgesen",
+        "hometown": "Blåhøj"
       }
     }
 

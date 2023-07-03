@@ -12,6 +12,7 @@ async function startApp() {
   //Eventlisteners
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
   document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
+
 }
 
 async function getposts() {
@@ -64,11 +65,54 @@ function generatePost(postObject) {
 
   document.querySelector("#spotter-posts-container").insertAdjacentHTML("beforeend", htmlPost);
   
-  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", updatePostClicked)
-  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", deletePostClicked)
+  document.querySelector("#spotter-posts-container article:last-child").addEventListener("click", showDetails)
 
+  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", event => {
+    event.stopPropagation();
+    updatePostClicked();
+  })
+  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", event => {
+    event.stopPropagation();
+    deletePostClicked();
+  })
+
+  function showDetails() {
+    document.querySelector("#detail-mushroom-name").textContent = postObject.mushroomname;
+    document.querySelector("#detail-latin-name").textContent = postObject.namelatin;
+    document.querySelector("#detail-image").src = postObject.image;
+    document.querySelector("#detail-description").textContent = postObject.description;
+    document.querySelector("#detail-recognition").textContent = postObject.recognition;
+    if (postObject.edible) {
+      document.querySelector("#detail-edible").textContent = "Yes!";
+    } else {
+      document.querySelector("#detail-edible").textContent = "No!";
+    }
+    if (postObject.poisonous) {
+      document.querySelector("#detail-poisonous").textContent = "Yes, do not eat!";
+    } else {
+      document.querySelector("#detail-poisonous").textContent = "No, safe to eat.";
+    }
+    document.querySelector("#detail-season-from").textContent = postObject.seasonstart;
+    document.querySelector("#detail-season-to").textContent = postObject.seasonend;
+
+    for (let i = 0; i < postObject.confusedwith.length; i++) {
+      const htmlElement = /*html*/ `
+                    <li>${postObject.confusedwith[i]}</li>
+      `;
+
+      document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlElement);
+    }
+  
+    document.querySelector("#dialog-detail-view").showModal();
+  }
+  // function detailsClicked(postObject) {
+  //   console.log("calling showDetails...")
+  //   showDetails(postObject);
+  // }
+  
   function updatePostClicked() {
     console.log("updateClicked");
+    // to-do
   }
   
   function deletePostClicked() {
@@ -77,6 +121,7 @@ function generatePost(postObject) {
     document.querySelector("#dialog-delete").showModal();    
   }
 }
+
 
 function cancelDelete() {
   console.log("delete canceled!")
