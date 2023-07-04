@@ -103,6 +103,7 @@ function generatePost(postObject) {
       document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlElement);
     }
   
+    document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
     document.querySelector("#dialog-detail-view").showModal();
   }
   // function detailsClicked(postObject) {
@@ -120,6 +121,10 @@ function generatePost(postObject) {
     document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
     document.querySelector("#dialog-delete").showModal();    
   }
+}
+
+function closeDetailView() {
+  document.querySelector("#dialog-detail-view").close();
 }
 
 

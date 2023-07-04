@@ -78,7 +78,7 @@ button {
 /* CLOSE BTN */
 .close {
     position: absolute;
-    right: 24px;
+    right: 48px;
     top: 24px;
     width: 24px;
     height: 24px;
@@ -105,5 +105,3 @@ button {
 .close:after {
   transform: rotate(-45deg);
 }
-
-/*  */
