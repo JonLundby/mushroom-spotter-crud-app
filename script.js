@@ -5,19 +5,21 @@ let posts;
 
 window.addEventListener("load", startApp);
 
+// ----------startApp / initial start function ---------- \\
 async function startApp() {
   //updating the posts grid
   updatePostGrid();
 
-  //Eventlisteners
+  // ----------Eventlisteners ---------- \\
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
   document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
-
 }
 
+// ----------getPosts / fetching json data from firebase ---------- \\
 async function getposts() {
   const response = await fetch(`${endpoint}/post.json`);
   const data = await response.json();
+  //checking if data is object and preparing posts
   if (typeof data === "object" && data !== null) {
     const posts = preparePosts(data);
     return posts;
@@ -26,8 +28,10 @@ async function getposts() {
   }
 }
 
+// ----------preparePosts / pushes each data key, as an object, into new posts array and adds .id property to each object  ---------- \\
 function preparePosts(data) {
   const postsArr = [];
+  // console.log(data);
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const post = data[key];
@@ -35,12 +39,15 @@ function preparePosts(data) {
       postsArr.push(post);
     }
   }
+  // console.log(postsArr);
   return postsArr;
 }
 
+// ----------updatePostGrid / updating the posts grid ---------- \\
 async function updatePostGrid() {
   posts = await getposts();
-
+  // console.log(posts);
+  
   showSpottersPosts(posts);
 }
 
@@ -53,8 +60,8 @@ function showSpottersPosts(posts) {
 
 function generatePost(postObject) {
   const htmlPost = /*html*/ `
-                        <article>
-                            <h2>${postObject.mushroomname}<h2>
+  <article>
+  <h2>${postObject.mushroomname}<h2>
                             <h3>${postObject.namelatin}</h3>
                             <img src=${postObject.image}>
                             <p>${postObject.areafound}</p>
@@ -64,17 +71,17 @@ function generatePost(postObject) {
     `;
 
   document.querySelector("#spotter-posts-container").insertAdjacentHTML("beforeend", htmlPost);
-  
-  document.querySelector("#spotter-posts-container article:last-child").addEventListener("click", showDetails)
 
-  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", event => {
+  document.querySelector("#spotter-posts-container article:last-child").addEventListener("click", showDetails);
+
+  document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", (event) => {
     event.stopPropagation();
     updatePostClicked();
-  })
-  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", event => {
+  });
+  document.querySelector("#spotter-posts-container article:last-child .btn-delete").addEventListener("click", (event) => {
     event.stopPropagation();
     deletePostClicked();
-  })
+  });
 
   function showDetails() {
     document.querySelector("#detail-mushroom-name").textContent = postObject.mushroomname;
@@ -102,7 +109,7 @@ function generatePost(postObject) {
 
       document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlElement);
     }
-  
+
     document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
     document.querySelector("#dialog-detail-view").showModal();
   }
@@ -110,16 +117,16 @@ function generatePost(postObject) {
   //   console.log("calling showDetails...")
   //   showDetails(postObject);
   // }
-  
+
   function updatePostClicked() {
     console.log("updateClicked");
     // to-do
   }
-  
+
   function deletePostClicked() {
     document.querySelector("#mushroomname-to-delete").textContent = postObject.mushroomname;
     document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
-    document.querySelector("#dialog-delete").showModal();    
+    document.querySelector("#dialog-delete").showModal();
   }
 }
 
@@ -127,25 +134,24 @@ function closeDetailView() {
   document.querySelector("#dialog-detail-view").close();
 }
 
-
 function cancelDelete() {
-  console.log("delete canceled!")
+  console.log("delete canceled!");
   document.querySelector("#dialog-delete").close();
 }
 
 async function executeDelete(event) {
-  console.log("executeDelete called!")
+  console.log("executeDelete called!");
   const id = event.target.getAttribute("data-id");
   const response = await deletePost(id);
 
   if (response.ok) {
-    console.log("mushroom post deleted")
+    console.log("mushroom post deleted");
     updatePostGrid();
   }
 }
 
 async function deletePost(id) {
   const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
-  console.log(response)
+  console.log(response);
   return response;
 }

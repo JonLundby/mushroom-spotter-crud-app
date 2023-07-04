@@ -22,12 +22,12 @@
       <!-- buttons create, search, filter -->
       <section id="option-btns-container">
         <button>Create new post</button>
-        <label for="search-text">Search: <input type="text" id="search-text" placeholder="search..."></label>
+        <label for="search-text">Search: <input type="text" id="search-text" placeholder="search..." /></label>
         <fieldset>
-        <legend>Filters</legend>
-        <input type="checkbox" name="" id="">  
-        <input type="checkbox" name="" id="">  
-        <input type="checkbox" name="" id="">  
+          <legend>Filters</legend>
+          <input type="checkbox" name="" id="" />
+          <input type="checkbox" name="" id="" />
+          <input type="checkbox" name="" id="" />
         </fieldset>
       </section>
 
@@ -39,35 +39,35 @@
 
     <!-- Dialog/Modal detail view -->
     <dialog id="dialog-detail-view">
-        <p id="dialog-x-close" class="close"></p>
-      <section>
-        <h2 id="detail-mushroom-name">general name</h2>
-      <h4 id="detail-latin-name">(Latin name)</h4>
-      <img src="" alt="" id="detail-image">
-      <p id="detail-description">description</p>
-      <p id="detail-recognition">recognition</p>
-      <div>
-        <ul>
-          <li>Edible: <span id="detail-edible"></span></li>
-          <li>Poisonous: <span id="detail-poisonous"></span></li>
-          <li>Season starts in <span id="detail-season-from"></span> and ends in <span id="detail-season-to"></span></li>
-          <li>Often confused with:</li>
-          <ul id="detail-confused-with">
-            <!-- <li>1</li>
+      <p id="dialog-x-close" class="close"></p>
+      <section id="dialog-detail-main-section">
+        <article id="grid-a">
+          <h2 id="detail-mushroom-name">general name</h2>
+          <h4 id="detail-latin-name">(Latin name)</h4>
+        </article>
+        <article id="b-grid">
+          <img src="" alt="" id="detail-image" />
+          <p id="detail-description">description</p>
+          <p id="detail-recognition">recognition</p>
+        </article>
+        <article id="c-grid">
+          <ul>
+            <li>Edible: <span id="detail-edible"></span></li>
+            <li>Poisonous: <span id="detail-poisonous"></span></li>
+            <li>Season starts in <span id="detail-season-from"></span> and ends in <span id="detail-season-to"></span></li>
+            <li>Often confused with:</li>
+            <ul id="detail-confused-with">
+              <!-- <li>1</li>
             <li>2</li>
             <li>3</li> -->
+            </ul>
           </ul>
-        </ul>
-        <!-- img for area found/check if linking to google maps works? -->
-        <img src="" alt="">
-        <p>area spotted:</p>
-        <p>spotted by: ???</p>
-      </div>
-      <ul>
-
-      </ul>
+          <!-- img for area found/check if linking to google maps works? -->
+          <img src="" alt="" />
+          <p>area spotted:</p>
+          <p>spotted by: ???</p>
+        </article>
       </section>
-      
     </dialog>
 
     <!-- Dialog/Modal create -->
@@ -83,12 +83,11 @@
         <button type="submit">delete</button>
       </form>
     </dialog>
-    
+
     <!-- Dialog/Modal update -->
     <dialog id="dialog-update">
       <!-- to-do -->
     </dialog>
-    
 
     <script src="script.js"></script>
   </body>
