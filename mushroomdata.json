@@ -1,109 +1,107 @@
 {
-    "post": {
-      "00": {
-        "mushroomname": "horse mushroom",
-        "namelatin": "Abortiporus biennis",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Agaricus_arvensis_-_livadski_%C5%A1ampinjon.jpg",
-        "map": "url",
-        "areafound": "some area..",
-        "description": "A general description of Abortiporus biennis",
-        "recognition": "description of visible characteristics for recognition",
-        "edible": true,
-        "poisonous": false,
-        "seasonstart": "May",
-        "seasonend": "October",
-        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
-        "spotter": "01"
-      },
-      "01": {
-        "mushroomname": "Orange Grisette",
-        "namelatin": "Amanita crocea",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Amanita-fulva.jpg",
-        "map": "url",
-        "areafound": "some area..",
-        "description": "A general description of Amanita crocea",
-        "recognition": "description of visible characteristics for recognition",
-        "edible": true,
-        "poisonous": false,
-        "seasonstart": "July",
-        "seasonend": "October",
-        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
-        "spotter": "01"
-      },
-      "02": {
-        "mushroomname": "Scarletina Bolete",
-        "namelatin": "Neoboletus praestigiator",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/BOLETUS_RHODOPURPUREUS_%286083097432%29.jpg",
-        "map": "url",
-        "areafound": "some area..",
-        "description": "A general description of Neoboletus praestigiator",
-        "recognition": "description of visible characteristics for recognition",
-        "edible": true,
-        "poisonous": false,
-        "seasonstart": "July",
-        "seasonend": "October",
-        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
-        "spotter": "00"
-      },
-      "03": {
-        "mushroomname": "Old Man of the Woods",
-        "namelatin": "Strobilomyces strobilaceus",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Old_Man_of_the_Woods_-_Strobilomyces_strobilaceus_%2837432117936%29.jpg",
-        "map": "url",
-        "areafound": "some area..",
-        "description": "A general description of Strobilomyces strobilaceus",
-        "recognition": "description of visible characteristics for recognition",
-        "edible": true,
-        "poisonous": false,
-        "seasonstart": "July",
-        "seasonend": "November",
-        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
-        "spotter": "01"
-      },
-      "04": {
-        "mushroomname": "Devil's Bolete",
-        "namelatin": "Rubroboletus satanas",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Devils_Bolete._Boletus_satanoides_-_Flickr_-_gailhampshire.jpg",
-        "map": "url",
-        "areafound": "some area..",
-        "description": "A general description of Rubroboletus satanas",
-        "recognition": "description of visible characteristics for recognition",
-        "edible": false,
-        "poisonous": true,
-        "seasonstart": "June",
-        "seasonend": "October",
-        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
-        "spotter": "00"
-      },
-      "05": {
-        "mushroomname": "King Alfred's Cakes",
-        "namelatin": "Daldinia concentrica",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/King_Alfred%27s_Cakes_%28Daldinia_concentrica%29.jpg",
-        "map": "url",
-        "areafound": "some area..",
-        "description": "A general description of Daldinia concentrica",
-        "recognition": "description of visible characteristics for recognition",
-        "edible": false,
-        "poisonous": false,
-        "seasonstart": "January",
-        "seasonend": "January",
-        "confusedwith": ["another mushroom", "and another mushroom", "and maybe one more mushroom"],
-        "spotter": "01"
-      }
+  "post": {
+    "00": {
+      "mushroomname": "horse mushroom",
+      "namelatin": "Abortiporus biennis",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Agaricus_arvensis_-_livadski_%C5%A1ampinjon.jpg",
+      "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
+      "areafound": "Near National Trust - Dover's Hill",
+      "description": "A general description of Abortiporus biennis",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": true,
+      "poisonous": false,
+      "seasonstart": "May",
+      "seasonend": "October",
+      "confusedwith": ["Yellow Stainer (Agaricus xanthodermus)", "Other amanitas when young"],
+      "spotter": "01"
     },
-
-    "spotter": {
-      "00": {
-        "firstname": "Anders",
-        "lastname": "Andersen",
-        "hometown": "Agerbæk"
-      },
-      "01": {
-        "firstname": "Børge",
-        "lastname": "Børgesen",
-        "hometown": "Blåhøj"
-      }
+    "01": {
+      "mushroomname": "Orange Grisette",
+      "namelatin": "Amanita crocea",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Amanita-fulva.jpg",
+      "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
+      "areafound": "Near National Trust - Dover's Hill",
+      "description": "A general description of Amanita crocea",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": true,
+      "poisonous": false,
+      "seasonstart": "July",
+      "seasonend": "October",
+      "confusedwith": ["Tawny Grisette (Amanita fulva)"],
+      "spotter": "01"
+    },
+    "02": {
+      "mushroomname": "Scarletina Bolete",
+      "namelatin": "Neoboletus praestigiator",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/BOLETUS_RHODOPURPUREUS_%286083097432%29.jpg",
+      "map": "https://www.google.com/maps/@54.3930052,-0.8841113,5795m/data=!3m1!1e3?entry=ttu",
+      "areafound": "Near North York Moors National Park",
+      "description": "A general description of Neoboletus praestigiator",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": true,
+      "poisonous": false,
+      "seasonstart": "July",
+      "seasonend": "October",
+      "confusedwith": ["Lurid Bolete (Suillellus luridus)", "Devil’s Bolete (Rubroboletus satanas)", "Deceiving bolete (Suillellus queletii)"],
+      "spotter": "00"
+    },
+    "03": {
+      "mushroomname": "Old Man of the Woods",
+      "namelatin": "Strobilomyces strobilaceus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Old_Man_of_the_Woods_-_Strobilomyces_strobilaceus_%2837432117936%29.jpg",
+      "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
+      "areafound": "Near National Trust - Dover's Hill",
+      "description": "A general description of Strobilomyces strobilaceus",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": true,
+      "poisonous": false,
+      "seasonstart": "July",
+      "seasonend": "November",
+      "confusedwith": ["none"],
+      "spotter": "01"
+    },
+    "04": {
+      "mushroomname": "Devil's Bolete",
+      "namelatin": "Rubroboletus satanas",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Devils_Bolete._Boletus_satanoides_-_Flickr_-_gailhampshire.jpg",
+      "map": "https://www.google.com/maps/@54.3930052,-0.8841113,5795m/data=!3m1!1e3?entry=ttu",
+      "areafound": "Near North York Moors National Park",
+      "description": "A general description of Rubroboletus satanas",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": false,
+      "poisonous": true,
+      "seasonstart": "June",
+      "seasonend": "October",
+      "confusedwith": ["Bitter Beech Bolete (Caloboletus calopus)", "Lurid Bolete (Suillellus luridus)", "Bilious bolete (Rubroboletus legaliae)"],
+      "spotter": "00"
+    },
+    "05": {
+      "mushroomname": "King Alfred's Cakes",
+      "namelatin": "Daldinia concentrica",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/King_Alfred%27s_Cakes_%28Daldinia_concentrica%29.jpg",
+      "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
+      "areafound": "Near National Trust - Dover's Hill",
+      "description": "A general description of Daldinia concentrica",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": false,
+      "poisonous": false,
+      "seasonstart": "January",
+      "seasonend": "January",
+      "confusedwith": ["none"],
+      "spotter": "01"
     }
+  },
 
-    
+  "spotter": {
+    "00": {
+      "firstname": "Andy",
+      "lastname": "Anderson",
+      "hometown": "Appleton Wiske"
+    },
+    "01": {
+      "firstname": "Benny",
+      "lastname": "Barnes",
+      "hometown": "Blackminster"
+    }
+  }
 }

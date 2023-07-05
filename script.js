@@ -35,7 +35,6 @@ function preparePosts(data) {
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const post = data[key];
-      post.id = key;
       postsArr.push(post);
     }
   }
@@ -46,7 +45,7 @@ function preparePosts(data) {
 // ----------updatePostGrid / updating the posts grid ---------- \\
 async function updatePostGrid() {
   posts = await getposts();
-  // console.log(posts);
+  console.log(posts);
   
   showSpottersPosts(posts);
 }
@@ -84,6 +83,10 @@ function generatePost(postObject) {
   });
 
   function showDetails() {
+    //Resetting the 'confused with' section
+    document.querySelector("#detail-confused-with").innerHTML = "";
+
+    //Propagating textContent for detail view
     document.querySelector("#detail-mushroom-name").textContent = postObject.mushroomname;
     document.querySelector("#detail-latin-name").textContent = postObject.namelatin;
     document.querySelector("#detail-image").src = postObject.image;
@@ -107,8 +110,21 @@ function generatePost(postObject) {
                     <li>${postObject.confusedwith[i]}</li>
       `;
 
-      document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlElement);
+      const htmlNoElements = /*html*/ `
+                    <li>There are no known mushrooms that look like ${postObject.mushroomname}</li>
+      `;
+
+      if (postObject.confusedwith[0] === "none") {
+        document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlNoElements);
+      } else {
+        document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlElement);
+      }
     }
+
+    document.querySelector("#detail-area-spotted").textContent = postObject.areafound;
+    
+    // link to google maps image somehow???
+    // document.querySelector("#detail-area-url").src = postObject.map;
 
     document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
     document.querySelector("#dialog-detail-view").showModal();
