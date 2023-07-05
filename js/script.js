@@ -1,55 +1,33 @@
 "use strict";
 
-const endpoint = "https://mushroom-spotter-data-default-rtdb.europe-west1.firebasedatabase.app/";
+import { getposts, getSpotters } from "./rest.js";
+
 let posts;
+let spotters;
 
 window.addEventListener("load", startApp);
 
 // ----------startApp / initial start function ---------- \\
 async function startApp() {
   //updating the posts grid
-  updatePostGrid();
+  updateGrid();
 
   // ----------Eventlisteners ---------- \\
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
   document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
 }
 
-// ----------getPosts / fetching json data from firebase ---------- \\
-async function getposts() {
-  const response = await fetch(`${endpoint}/post.json`);
-  const data = await response.json();
-  //checking if data is object and preparing posts
-  if (typeof data === "object" && data !== null) {
-    const posts = preparePosts(data);
-    return posts;
-  } else {
-    throw new Error("Invalid, data should be an object");
-  }
-}
-
-// ----------preparePosts / pushes each data key, as an object, into new posts array and adds .id property to each object  ---------- \\
-function preparePosts(data) {
-  const postsArr = [];
-  // console.log(data);
-  for (const key in data) {
-    if (data.hasOwnProperty(key)) {
-      const post = data[key];
-      postsArr.push(post);
-    }
-  }
-  // console.log(postsArr);
-  return postsArr;
-}
-
-// ----------updatePostGrid / updating the posts grid ---------- \\
-async function updatePostGrid() {
+// ----------updateGrid / updating the posts grid ---------- \\
+async function updateGrid() {
   posts = await getposts();
+  spotters = await getSpotters();
   console.log(posts);
+  console.log(spotters);
   
   showSpottersPosts(posts);
 }
 
+// ----------showSpottersPosts / resetting posts grid container and propagating it anew ---------- \\
 function showSpottersPosts(posts) {
   document.querySelector("#spotter-posts-container").innerHTML = "";
   for (const post of posts) {
@@ -57,6 +35,7 @@ function showSpottersPosts(posts) {
   }
 }
 
+// ----------generatePost / generating a piece of html code to insert in posts grid container ---------- \\
 function generatePost(postObject) {
   const htmlPost = /*html*/ `
   <article>
@@ -162,7 +141,7 @@ async function executeDelete(event) {
 
   if (response.ok) {
     console.log("mushroom post deleted");
-    updatePostGrid();
+    updateGrid();
   }
 }
 
