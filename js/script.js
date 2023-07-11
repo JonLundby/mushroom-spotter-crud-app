@@ -1,6 +1,6 @@
 "use strict";
 
-import { getposts, getSpotters } from "./rest.js";
+import { getposts, getSpotters, deletePost } from "./rest.js";
 
 let posts;
 let spotters;
@@ -108,10 +108,6 @@ function generatePost(postObject) {
     document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
     document.querySelector("#dialog-detail-view").showModal();
   }
-  // function detailsClicked(postObject) {
-  //   console.log("calling showDetails...")
-  //   showDetails(postObject);
-  // }
 
   function updatePostClicked() {
     console.log("updateClicked");
@@ -143,10 +139,4 @@ async function executeDelete(event) {
     console.log("mushroom post deleted");
     updateGrid();
   }
-}
-
-async function deletePost(id) {
-  const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
-  console.log(response);
-  return response;
 }

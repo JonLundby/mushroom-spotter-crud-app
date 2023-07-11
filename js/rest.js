@@ -54,4 +54,11 @@ function prepareSpotters(data) {
   return spottersArr;
 }
 
-export { getposts, getSpotters };
+// ---------- Deletes post from database ---------- \\
+async function deletePost(id) {
+  const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
+  console.log(response);
+  return response;
+}
+
+export { getposts, getSpotters, deletePost };
