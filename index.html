@@ -75,6 +75,99 @@
       <!-- to-do -->
     </dialog>
 
+    <!-- Dialog/Modal update -->
+    <dialog id="dialog-update">
+      <!-- header -->
+      <h3>Update <span id="mushroomname-to-update"></span></h3>
+      <form method="dialog" id="update-mushroom-form">
+
+        <!-- Name -->
+        <label for="update-mushroom-name">Common name:</label>
+        <input type="text" name="commonName" id="update-mushroom-name" />
+
+        <!-- Latin name -->
+        <label for="update-mushroom-latin">Latin name:</label>
+        <input type="text" name="namelatin" id="update-mushroom-latin" />
+
+        <!-- Image -->
+        <label for="update-mushroom-image">Image url:</label>
+        <input type="text" name="image" id="update-mushroom-image" />
+
+        <!-- Map -->
+        <label for="update-mushroom-map">Map:</label>
+        <input type="text" name="map" id="update-mushroom-map" />
+
+        <!-- Area found -->
+        <label for="update-mushroom-area-found">Area found:</label>
+        <input type="text" name="areafound" id="update-mushroom-area-found" />
+
+        <!-- Description -->
+        <label for="update-mushroom-description">Description:</label>
+        <input type="text" name="description" id="update-mushroom-description" />
+
+        <!-- recognition -->
+        <label for="update-mushroom-recognition">Recognition:</label>
+        <input type="text" name="recognition" id="update-mushroom-recognition" />
+
+        <!-- edible -->
+        <span>
+          <label for="update-mushroom-edible">Edible:</label>
+          <input type="checkbox" name="edible" id="update-mushroom-edible" />
+        </span>
+
+        <!-- poisonous -->
+        <span>
+          <label for="update-mushroom-poisonous">Poisonous:</label>
+          <input type="checkbox" name="poisonous" id="update-mushroom-poisonous" />
+        </span>
+
+        <!-- seasonstart -->
+        <label for="update-mushroom-seasonstart">Season starts:</label>
+        <select name="seasonstart" id="update-mushroom-seasonstart">
+          <option value="january">January</option>
+          <option value="febuary">Febuary</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+
+        <!-- seasonend -->
+        <label for="update-mushroom-seasonend">Season ends:</label>
+        <select name="seasonend" id="update-mushroom-seasonend">
+          <option value="january">January</option>
+          <option value="febuary">Febuary</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="May">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+
+        <!-- confusedwith -->
+        <label for="update-mushroom-confusedwith">Confused with:</label>
+        <input type="text" name="confusedwith" id="update-mushroom-confusedwith" />
+
+        <!-- spotter -->
+        <label for="update-mushroom-spotter">Spotter:</label>
+        <input type="text" name="spotter" id="update-mushroom-spotter" />
+
+        <button class="btn-cancel">Cancel</button>
+        <button type="submit">Update</button>
+      </form>
+    </dialog>
+
     <!-- Dialog/Modal DELETE -->
     <dialog id="dialog-delete">
       <h3>Confirm that you want to delete <span id="mushroomname-to-delete"></span></h3>
@@ -82,11 +175,6 @@
         <button type="button" class="btn-cancel">cancel</button>
         <button type="submit">delete</button>
       </form>
-    </dialog>
-
-    <!-- Dialog/Modal update -->
-    <dialog id="dialog-update">
-      <!-- to-do -->
     </dialog>
 
     <script src="/js/script.js" type="module"></script>

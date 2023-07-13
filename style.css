@@ -4,6 +4,7 @@
      --body-color: rgb(31, 99, 43);
      --secondary-main-color: rgba(90, 203, 72, 0.501);
      --btn-bg-color: rgba(124, 86, 14, 0.781);
+     --dialog-bg-color: rgb(60, 138, 48);
 }
 
 /* ---------- MAIN ELEMENTS ---------- */
@@ -69,11 +70,6 @@ button {
     margin: 10px;
 }
 
-#dialog-detail-view {
-    background-color: var(--body-color);
-    width: 80%;
-    height: 80%;
-}
 
 /* ---------- CLOSE BTN ---------- */
 .close {
@@ -86,7 +82,7 @@ button {
 }
 
 .close:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .close:before, .close:after {
@@ -99,7 +95,7 @@ button {
 }
 
 .close:before {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .close:after {
@@ -107,10 +103,16 @@ button {
 }
 
 /* ---------- detail view/dialog ---------- */
+#dialog-detail-view {
+    background-color: var(--dialog-bg-color);
+    width: 80%;
+    height: 80%;
+}
+
 #dialog-detail-main-section {
     display: grid;
     grid-template-areas: "a a"
-                         "b c"
+    "b c"
                          "b c";
     gap: 8px;
 }
@@ -126,4 +128,16 @@ button {
 
 #grid-c{
     grid-area: c;
+}
+
+/* ---------- update view/dialog ---------- */
+#dialog-update {
+    background-color: var(--dialog-bg-color);
+    width: 600px;
+}
+
+#update-mushroom-form {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 20px;
 }

@@ -1,33 +1,40 @@
 "use strict";
 
-import { getposts, getSpotters, deletePost } from "./rest.js";
+import { getposts, getSpotters, deletePost, updatePostObject } from "./rest.js";
 
 let posts;
 let spotters;
 
 window.addEventListener("load", startApp);
 
-// ----------startApp / initial start function ---------- \\
+// ---------- startApp / initial start function ---------- \\
 async function startApp() {
   //updating the posts grid
   updateGrid();
 
-  // ----------Eventlisteners ---------- \\
+  // ---------- Eventlisteners ---------- \\
+  //create
+
+  //update
+  document.querySelector("#update-mushroom-form").addEventListener("submit", updateClicked);
+  document.querySelector("#update-mushroom-form .btn-cancel").addEventListener("click", cancelUpdate);
+
+  //delete
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
   document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
 }
 
-// ----------updateGrid / updating the posts grid ---------- \\
+// ---------- updateGrid / updating the posts grid ---------- \\
 async function updateGrid() {
   posts = await getposts();
   spotters = await getSpotters();
   console.log(posts);
   console.log(spotters);
-  
+
   showSpottersPosts(posts);
 }
 
-// ----------showSpottersPosts / resetting posts grid container and propagating it anew ---------- \\
+// ---------- showSpottersPosts / resetting posts grid container and propagating it anew ---------- \\
 function showSpottersPosts(posts) {
   document.querySelector("#spotter-posts-container").innerHTML = "";
   for (const post of posts) {
@@ -35,11 +42,11 @@ function showSpottersPosts(posts) {
   }
 }
 
-// ----------generatePost / generating a piece of html code to insert in posts grid container ---------- \\
+// ---------- generatePost / generating a piece of html code to insert in posts grid container ---------- \\
 function generatePost(postObject) {
   const htmlPost = /*html*/ `
-  <article>
-  <h2>${postObject.mushroomname}<h2>
+                        <article>
+                            <h2>${postObject.commonName}<h2>
                             <h3>${postObject.namelatin}</h3>
                             <img src=${postObject.image}>
                             <p>${postObject.areafound}</p>
@@ -50,6 +57,7 @@ function generatePost(postObject) {
 
   document.querySelector("#spotter-posts-container").insertAdjacentHTML("beforeend", htmlPost);
 
+  // ---------- Eventlisteners on child elements---------- \\
   document.querySelector("#spotter-posts-container article:last-child").addEventListener("click", showDetails);
 
   document.querySelector("#spotter-posts-container article:last-child .btn-update").addEventListener("click", (event) => {
@@ -101,7 +109,7 @@ function generatePost(postObject) {
     }
 
     document.querySelector("#detail-area-spotted").textContent = postObject.areafound;
-    
+
     // link to google maps image somehow???
     // document.querySelector("#detail-area-url").src = postObject.map;
 
@@ -110,8 +118,29 @@ function generatePost(postObject) {
   }
 
   function updatePostClicked() {
-    console.log("updateClicked");
-    // to-do
+    //form shorthand
+    const updateForm = document.querySelector("#update-mushroom-form");
+
+    //propagating inputs
+    updateForm.commonName.value = postObject.commonName;
+    updateForm.namelatin.value = postObject.namelatin;
+    updateForm.image.value = postObject.image;
+    updateForm.map.value = postObject.map;
+    updateForm.areafound.value = postObject.areafound;
+    updateForm.description.value = postObject.description;
+    updateForm.recognition.value = postObject.recognition;
+    updateForm.edible.checked = postObject.edible;
+    updateForm.poisonous.checked = postObject.poisonous;
+    updateForm.seasonstart.value = postObject.seasonstart;
+    updateForm.seasonend.value = postObject.seasonend;
+    updateForm.confusedwith.value = postObject.confusedwith;
+    updateForm.spotter.value = postObject.spotter; //needs to refer to spotter name or id
+
+    //setting the current postObjects id to the form
+    updateForm.setAttribute("data-id", postObject.id);
+
+    //show update dialog
+    document.querySelector("#dialog-update").showModal();
   }
 
   function deletePostClicked() {
@@ -123,6 +152,56 @@ function generatePost(postObject) {
 
 function closeDetailView() {
   document.querySelector("#dialog-detail-view").close();
+}
+
+async function updateClicked(event) {
+  console.log("update post was clicked");
+  //form shorthand
+  const form = event.target;
+
+  const commonName = form.commonName.value;
+  const namelatin = form.namelatin.value;
+  const image = form.image.value;
+  const map = form.map.value;
+  const areaFound = form.areafound.value;
+  const description = form.description.value;
+  const recognition = form.recognition.value;
+  const edible = Boolean(form.edible.value);
+  const poisonous = Boolean(form.poisonous.value);
+  const seasonStart = form.seasonstart.value;
+  const seasonEnd = form.seasonend.value;
+  const spotter = form.spotter.value;
+
+  const id = form.getAttribute("data-id");
+
+  const response = await updatePostObject(
+    id,
+    commonName,
+    namelatin,
+    image,
+    map,
+    areaFound,
+    description,
+    recognition,
+    edible,
+    poisonous,
+    seasonStart,
+    seasonEnd,
+    spotter
+  );
+
+  if (response.ok) {
+    console.log("update succes!");
+    updateGrid();
+  } else {
+    console.log("update failed");
+    //to-do: make error message
+  }
+}
+
+function cancelUpdate() {
+  console.log("update canceled!");
+  document.querySelector("#dialog-update").close();
 }
 
 function cancelDelete() {

@@ -1,7 +1,7 @@
 {
   "post": {
     "00": {
-      "mushroomname": "horse mushroom",
+      "commonName": "horse mushroom",
       "namelatin": "Abortiporus biennis",
       "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Agaricus_arvensis_-_livadski_%C5%A1ampinjon.jpg",
       "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
@@ -16,7 +16,7 @@
       "spotter": "01"
     },
     "01": {
-      "mushroomname": "Orange Grisette",
+      "commonName": "Orange Grisette",
       "namelatin": "Amanita crocea",
       "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Amanita-fulva.jpg",
       "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
@@ -31,7 +31,7 @@
       "spotter": "01"
     },
     "02": {
-      "mushroomname": "Scarletina Bolete",
+      "commonName": "Scarletina Bolete",
       "namelatin": "Neoboletus praestigiator",
       "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/BOLETUS_RHODOPURPUREUS_%286083097432%29.jpg",
       "map": "https://www.google.com/maps/@54.3930052,-0.8841113,5795m/data=!3m1!1e3?entry=ttu",
@@ -46,7 +46,7 @@
       "spotter": "00"
     },
     "03": {
-      "mushroomname": "Old Man of the Woods",
+      "commonName": "Old Man of the Woods",
       "namelatin": "Strobilomyces strobilaceus",
       "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Old_Man_of_the_Woods_-_Strobilomyces_strobilaceus_%2837432117936%29.jpg",
       "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
@@ -61,7 +61,7 @@
       "spotter": "01"
     },
     "04": {
-      "mushroomname": "Devil's Bolete",
+      "commonName": "Devil's Bolete",
       "namelatin": "Rubroboletus satanas",
       "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Devils_Bolete._Boletus_satanoides_-_Flickr_-_gailhampshire.jpg",
       "map": "https://www.google.com/maps/@54.3930052,-0.8841113,5795m/data=!3m1!1e3?entry=ttu",
@@ -76,7 +76,7 @@
       "spotter": "00"
     },
     "05": {
-      "mushroomname": "King Alfred's Cakes",
+      "commonName": "King Alfred's Cakes",
       "namelatin": "Daldinia concentrica",
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/King_Alfred%27s_Cakes_%28Daldinia_concentrica%29.jpg",
       "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",

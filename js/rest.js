@@ -14,13 +14,13 @@ async function getposts() {
   }
 }
 
-// ----------preparePosts / pushes each data key, as an object, into new posts array and adds .id property to each object  ---------- \\
+// ---------- Pushes each data key into new posts array and adds .id property to each object  ---------- \\
 function preparePosts(data) {
   const postsArr = [];
-  // console.log(data);
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const post = data[key];
+      post.id = key
       postsArr.push(post);
     }
   }
@@ -47,6 +47,7 @@ function prepareSpotters(data) {
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const spotter = data[key];
+      spotter.id = key
       spottersArr.push(spotter);
     }
   }
@@ -54,11 +55,20 @@ function prepareSpotters(data) {
   return spottersArr;
 }
 
-// ---------- Deletes post from database ---------- \\
-async function deletePost(id) {
-  const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
-  console.log(response);
+// ---------- Updates post in database ---------- \\
+async function updatePostObject(id, commonName, namelatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, spotter) {
+  console.log("updatePostObject was called");
+  const postObjectToUpdate = { commonName, namelatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, spotter };
+
+  const json = JSON.stringify(postObjectToUpdate);
+  const response = await fetch(`${endpoint}/post/${id}.json`, { method: "PUT", body: json });
   return response;
 }
 
-export { getposts, getSpotters, deletePost };
+// ---------- Deletes post from database ---------- \\
+async function deletePost(id) {
+  const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
+  return response;
+}
+
+export { getposts, getSpotters, deletePost, updatePostObject };
