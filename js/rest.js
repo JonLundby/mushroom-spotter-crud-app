@@ -56,9 +56,22 @@ function prepareSpotters(data) {
 }
 
 // ---------- Updates post in database ---------- \\
-async function updatePostObject(id, commonName, namelatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, spotter) {
-  console.log("updatePostObject was called");
-  const postObjectToUpdate = { commonName, namelatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, spotter };
+async function updatePostObject(id, commonName, namelatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedwith, spotter) {
+  const postObjectToUpdate = {
+    commonName,
+    namelatin,
+    image,
+    map,
+    areaFound,
+    description,
+    recognition,
+    edible,
+    poisonous,
+    seasonStart,
+    seasonEnd,
+    confusedwith,
+    spotter,
+  };
 
   const json = JSON.stringify(postObjectToUpdate);
   const response = await fetch(`${endpoint}/post/${id}.json`, { method: "PUT", body: json });

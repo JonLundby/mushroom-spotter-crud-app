@@ -74,7 +74,7 @@ function generatePost(postObject) {
     document.querySelector("#detail-confused-with").innerHTML = "";
 
     //Propagating textContent for detail view
-    document.querySelector("#detail-mushroom-name").textContent = postObject.mushroomname;
+    document.querySelector("#detail-common-name").textContent = postObject.commonName;
     document.querySelector("#detail-latin-name").textContent = postObject.namelatin;
     document.querySelector("#detail-image").src = postObject.image;
     document.querySelector("#detail-description").textContent = postObject.description;
@@ -131,10 +131,10 @@ function generatePost(postObject) {
     updateForm.recognition.value = postObject.recognition;
     updateForm.edible.checked = postObject.edible;
     updateForm.poisonous.checked = postObject.poisonous;
-    updateForm.seasonstart.value = postObject.seasonstart;
-    updateForm.seasonend.value = postObject.seasonend;
+    updateForm.seasonstart.value = postObject.seasonstart; //to-do; season start/end does not propagate!
+    updateForm.seasonend.value = postObject.seasonend; //to-do; season start/end does not propagate!
     updateForm.confusedwith.value = postObject.confusedwith;
-    updateForm.spotter.value = postObject.spotter; //needs to refer to spotter name or id
+    updateForm.spotter.value = postObject.spotter; //to-do; needs to refer to spotter name or id
 
     //setting the current postObjects id to the form
     updateForm.setAttribute("data-id", postObject.id);
@@ -159,17 +159,28 @@ async function updateClicked(event) {
   //form shorthand
   const form = event.target;
 
-  const commonName = form.commonName.value;
-  const namelatin = form.namelatin.value;
-  const image = form.image.value;
-  const map = form.map.value;
-  const areaFound = form.areafound.value;
-  const description = form.description.value;
-  const recognition = form.recognition.value;
-  const edible = Boolean(form.edible.value);
-  const poisonous = Boolean(form.poisonous.value);
-  const seasonStart = form.seasonstart.value;
-  const seasonEnd = form.seasonend.value;
+  const commonName = form.commonName.value; //WORKING
+  const namelatin = form.namelatin.value; //WORKING
+  const image = form.image.value; //WORKING
+  const map = form.map.value; //to-do; should work but propagating is not working...
+  const areaFound = form.areafound.value; //WORKING
+  const description = form.description.value; //WORKING
+  const recognition = form.recognition.value; //WORKING
+  const edible = form.edible.checked; //WORKING
+  const poisonous = form.poisonous.checked; //WORKING
+  const seasonStart = form.seasonstart.value; //WORKING
+  const seasonEnd = form.seasonend.value; //WORKING
+  const confusedwith = confusedwithArr(); ////WORKING (to-do; optimate for spelling errors)
+
+  function confusedwithArr() {
+    let arr = [];
+    const str = form.confusedwith.value;
+
+    arr = str.split(", ");
+
+    return arr;
+  }
+
   const spotter = form.spotter.value;
 
   const id = form.getAttribute("data-id");
@@ -187,6 +198,7 @@ async function updateClicked(event) {
     poisonous,
     seasonStart,
     seasonEnd,
+    confusedwith,
     spotter
   );
 
