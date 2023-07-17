@@ -45,7 +45,7 @@ function showSpottersPosts(posts) {
 // ---------- generatePost / generating a piece of html code to insert in posts grid container ---------- \\
 function generatePost(postObject) {
   const htmlPost = /*html*/ `
-                        <article>
+                        <article id="article-mushroom-post">
                             <h2>${postObject.commonName}<h2>
                             <h3>${postObject.nameLatin}</h3>
                             <img src=${postObject.image}>

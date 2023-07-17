@@ -50,10 +50,22 @@ h1 {
 #spotter-posts-container > article {
     background-color: var(--secondary-main-color);
     box-shadow: 1px 2px 5px black;
+    border-radius: 20px;
+    opacity: 0.9;
 }
 
 #spotter-posts-container > article:hover {
     box-shadow: 2px 2px 12px black;
+    opacity: 1;
+    animation-name: mushroomArticle;
+    animation-duration: 200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mushroomArticle {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.015);}
 }
 
 img {
