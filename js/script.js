@@ -131,10 +131,8 @@ function generatePost(postObject) {
     updateForm.recognition.value = postObject.recognition;
     updateForm.edible.checked = postObject.edible;
     updateForm.poisonous.checked = postObject.poisonous;
-    console.log(updateForm.seasonStart.value);
-    console.log(updateForm.seasonEnd.value);
-    updateForm.seasonStart.selected = postObject.seasonStart; //to-do; season start/end does not propagate!
-    updateForm.seasonEnd.selected = postObject.seasonEnd; //to-do; season start/end does not propagate!
+    updateForm.seasonStart.value = postObject.seasonStart;
+    updateForm.seasonEnd.value = postObject.seasonEnd;
     updateForm.confusedWith.value = postObject.confusedWith;
     updateForm.spotter.value = postObject.spotter; //to-do; needs to refer to spotter name or id
 
