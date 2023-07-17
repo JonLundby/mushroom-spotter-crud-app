@@ -47,9 +47,9 @@ function generatePost(postObject) {
   const htmlPost = /*html*/ `
                         <article>
                             <h2>${postObject.commonName}<h2>
-                            <h3>${postObject.namelatin}</h3>
+                            <h3>${postObject.nameLatin}</h3>
                             <img src=${postObject.image}>
-                            <p>${postObject.areafound}</p>
+                            <p>${postObject.areaFound}</p>
                             <button class="btn-update">Update</button>
                             <button class="btn-delete">Delete</button>
                         </article>
@@ -75,7 +75,7 @@ function generatePost(postObject) {
 
     //Propagating textContent for detail view
     document.querySelector("#detail-common-name").textContent = postObject.commonName;
-    document.querySelector("#detail-latin-name").textContent = postObject.namelatin;
+    document.querySelector("#detail-latin-name").textContent = postObject.nameLatin;
     document.querySelector("#detail-image").src = postObject.image;
     document.querySelector("#detail-description").textContent = postObject.description;
     document.querySelector("#detail-recognition").textContent = postObject.recognition;
@@ -89,26 +89,26 @@ function generatePost(postObject) {
     } else {
       document.querySelector("#detail-poisonous").textContent = "No, safe to eat.";
     }
-    document.querySelector("#detail-season-from").textContent = postObject.seasonstart;
-    document.querySelector("#detail-season-to").textContent = postObject.seasonend;
+    document.querySelector("#detail-season-from").textContent = postObject.seasonStart;
+    document.querySelector("#detail-season-to").textContent = postObject.seasonEnd;
 
-    for (let i = 0; i < postObject.confusedwith.length; i++) {
+    for (let i = 0; i < postObject.confusedWith.length; i++) {
       const htmlElement = /*html*/ `
-                    <li>${postObject.confusedwith[i]}</li>
+                    <li>${postObject.confusedWith[i]}</li>
       `;
 
       const htmlNoElements = /*html*/ `
                     <li>There are no known mushrooms that look like ${postObject.commonName}</li>
       `;
 
-      if (postObject.confusedwith[0] === "none") {
+      if (postObject.confusedWith[0] === "none") {
         document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlNoElements);
       } else {
         document.querySelector("#detail-confused-with").insertAdjacentHTML("beforeend", htmlElement);
       }
     }
 
-    document.querySelector("#detail-area-spotted").textContent = postObject.areafound;
+    document.querySelector("#detail-area-spotted").textContent = postObject.areaFound;
 
     // link to google maps image somehow???
     // document.querySelector("#detail-area-url").src = postObject.map;
@@ -123,19 +123,19 @@ function generatePost(postObject) {
 
     //propagating inputs
     updateForm.commonName.value = postObject.commonName;
-    updateForm.namelatin.value = postObject.namelatin;
+    updateForm.nameLatin.value = postObject.nameLatin;
     updateForm.image.value = postObject.image;
     updateForm.map.value = postObject.map;
-    updateForm.areafound.value = postObject.areafound;
+    updateForm.areaFound.value = postObject.areaFound;
     updateForm.description.value = postObject.description;
     updateForm.recognition.value = postObject.recognition;
     updateForm.edible.checked = postObject.edible;
     updateForm.poisonous.checked = postObject.poisonous;
-    console.log(updateForm.seasonstart.value);
-    console.log(updateForm.seasonend.value);
-    updateForm.seasonstart.selected = postObject.seasonstart; //to-do; season start/end does not propagate!
-    updateForm.seasonend.selected = postObject.seasonend; //to-do; season start/end does not propagate!
-    updateForm.confusedwith.value = postObject.confusedwith;
+    console.log(updateForm.seasonStart.value);
+    console.log(updateForm.seasonEnd.value);
+    updateForm.seasonStart.selected = postObject.seasonStart; //to-do; season start/end does not propagate!
+    updateForm.seasonEnd.selected = postObject.seasonEnd; //to-do; season start/end does not propagate!
+    updateForm.confusedWith.value = postObject.confusedWith;
     updateForm.spotter.value = postObject.spotter; //to-do; needs to refer to spotter name or id
 
     //setting the current postObjects id to the form
@@ -162,21 +162,21 @@ async function updateClicked(event) {
   const form = event.target;
 
   const commonName = form.commonName.value; //WORKING
-  const namelatin = form.namelatin.value; //WORKING
+  const nameLatin = form.nameLatin.value; //WORKING
   const image = form.image.value; //WORKING
   const map = form.map.value; //to-do; should work but propagating is not working...
-  const areaFound = form.areafound.value; //WORKING
+  const areaFound = form.areaFound.value; //WORKING
   const description = form.description.value; //WORKING
   const recognition = form.recognition.value; //WORKING
   const edible = form.edible.checked; //WORKING
   const poisonous = form.poisonous.checked; //WORKING
-  const seasonStart = form.seasonstart.value; //WORKING
-  const seasonEnd = form.seasonend.value; //WORKING
-  const confusedwith = confusedwithArr(); ////WORKING (to-do; optimate for spelling errors)
+  const seasonStart = form.seasonStart.value; //WORKING
+  const seasonEnd = form.seasonEnd.value; //WORKING
+  const confusedWith = confusedWithArr(); ////WORKING (to-do; optimate for spelling errors)
 
-  function confusedwithArr() {
+  function confusedWithArr() {
     let arr = [];
-    const str = form.confusedwith.value;
+    const str = form.confusedWith.value;
 
     arr = str.split(", ");
 
@@ -190,7 +190,7 @@ async function updateClicked(event) {
   const response = await updatePostObject(
     id,
     commonName,
-    namelatin,
+    nameLatin,
     image,
     map,
     areaFound,
@@ -200,7 +200,7 @@ async function updateClicked(event) {
     poisonous,
     seasonStart,
     seasonEnd,
-    confusedwith,
+    confusedWith,
     spotter
   );
 

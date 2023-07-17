@@ -56,10 +56,10 @@ function prepareSpotters(data) {
 }
 
 // ---------- Updates post in database ---------- \\
-async function updatePostObject(id, commonName, namelatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedwith, spotter) {
+async function updatePostObject(id, commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter) {
   const postObjectToUpdate = {
     commonName,
-    namelatin,
+    nameLatin,
     image,
     map,
     areaFound,
@@ -69,7 +69,7 @@ async function updatePostObject(id, commonName, namelatin, image, map, areaFound
     poisonous,
     seasonStart,
     seasonEnd,
-    confusedwith,
+    confusedWith,
     spotter,
   };
 
