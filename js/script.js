@@ -98,7 +98,7 @@ function generatePost(postObject) {
       `;
 
       const htmlNoElements = /*html*/ `
-                    <li>There are no known mushrooms that look like ${postObject.mushroomname}</li>
+                    <li>There are no known mushrooms that look like ${postObject.commonName}</li>
       `;
 
       if (postObject.confusedwith[0] === "none") {
@@ -131,6 +131,8 @@ function generatePost(postObject) {
     updateForm.recognition.value = postObject.recognition;
     updateForm.edible.checked = postObject.edible;
     updateForm.poisonous.checked = postObject.poisonous;
+    console.log(updateForm.seasonstart.value);
+    console.log(updateForm.seasonend.value);
     updateForm.seasonstart.selected = postObject.seasonstart; //to-do; season start/end does not propagate!
     updateForm.seasonend.selected = postObject.seasonend; //to-do; season start/end does not propagate!
     updateForm.confusedwith.value = postObject.confusedwith;
@@ -144,7 +146,7 @@ function generatePost(postObject) {
   }
 
   function deletePostClicked() {
-    document.querySelector("#mushroomname-to-delete").textContent = postObject.mushroomname;
+    document.querySelector("#common-name-to-delete").textContent = postObject.commonName;
     document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
     document.querySelector("#dialog-delete").showModal();
   }
