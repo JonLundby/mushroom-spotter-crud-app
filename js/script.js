@@ -15,6 +15,8 @@ async function startApp() {
   // ---------- Eventlisteners ---------- \\
   //create
   document.querySelector("#create-btn-main").addEventListener("click", createClicked);
+  document.querySelector("#create-mushroom-form").addEventListener("submit", createFormClicked);
+  document.querySelector("#create-mushroom-form .btn-cancel").addEventListener("click", cancelCreate);
 
   //update
   document.querySelector("#update-mushroom-form").addEventListener("submit", updateClicked);
@@ -152,10 +154,20 @@ function generatePost(postObject) {
 }
 //generatePost codeblock end
 
+
 function createClicked() {
   console.log("createClicked!");
 
   document.querySelector("#dialog-create").showModal();
+}
+
+function createFormClicked(event) {
+  event.preventDefault();
+  console.log("this function should send data to firebase and create/post a new mushroom post")
+}
+
+function cancelCreate() {
+  document.querySelector("#dialog-create").close();
 }
 
 function closeDetailView() {
