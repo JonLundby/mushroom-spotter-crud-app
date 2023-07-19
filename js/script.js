@@ -14,6 +14,7 @@ async function startApp() {
 
   // ---------- Eventlisteners ---------- \\
   //create
+  document.querySelector("#create-btn-main").addEventListener("click", createClicked);
 
   //update
   document.querySelector("#update-mushroom-form").addEventListener("submit", updateClicked);
@@ -148,6 +149,13 @@ function generatePost(postObject) {
     document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
     document.querySelector("#dialog-delete").showModal();
   }
+}
+//generatePost codeblock end
+
+function createClicked() {
+  console.log("createClicked!");
+
+  document.querySelector("#dialog-create").showModal();
 }
 
 function closeDetailView() {
