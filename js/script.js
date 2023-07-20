@@ -1,6 +1,6 @@
 "use strict";
 
-import { getposts, getSpotters, deletePost, updatePostObject } from "./rest.js";
+import { getposts, getSpotters, deletePost, creatPostObject, updatePostObject } from "./rest.js";
 
 let posts;
 let spotters;
@@ -14,7 +14,7 @@ async function startApp() {
 
   // ---------- Eventlisteners ---------- \\
   //create
-  document.querySelector("#create-btn-main").addEventListener("click", createClicked);
+  document.querySelector("#create-btn-main").addEventListener("click", showCreateClicked);
   document.querySelector("#create-mushroom-form").addEventListener("submit", createFormClicked);
   document.querySelector("#create-mushroom-form .btn-cancel").addEventListener("click", cancelCreate);
 
@@ -155,15 +155,70 @@ function generatePost(postObject) {
 //generatePost codeblock end
 
 
-function createClicked() {
-  console.log("createClicked!");
-
+function showCreateClicked(event) {
+  event.preventDefault();
   document.querySelector("#dialog-create").showModal();
 }
 
-function createFormClicked(event) {
+async function createFormClicked(event) {
+  console.log("create form clicked")
   event.preventDefault();
-  console.log("this function should send data to firebase and create/post a new mushroom post")
+  const form = event.target;
+  
+  const commonName = form.commonName.value;
+  const nameLatin = form.nameLatin.value;
+  const image = form.image.value;
+  const map = form.map.value;
+  const areaFound = form.areaFound.value;
+  const description = form.description.value;
+  const recognition = form.recognition.value;
+  const edible = form.edible.checked;
+  const poisonous = form.poisonous.checked;
+  const seasonStart = form.seasonStart.value;
+  const seasonEnd = form.seasonEnd.value;
+  const confusedWith = confusedWithArr();
+
+  function confusedWithArr() {
+    let arr = [];
+    const str = form.confusedWith.value;
+
+    arr = str.split(", ");
+
+    return arr;
+  }
+
+  const spotter = form.spotter.value;
+
+  console.log("variables should be set?");
+
+  const response = await creatPostObject(
+    commonName,
+    nameLatin,
+    image,
+    map,
+    areaFound,
+    description,
+    recognition,
+    edible,
+    poisonous,
+    seasonStart,
+    seasonEnd,
+    confusedWith,
+    spotter
+  );
+
+  console.log(response);
+
+  if (response.ok) {
+    console.log("create succes!");
+    updateGrid();
+  } else {
+    console.log("create failed");
+    //to-do: make error message
+  }
+
+  document.querySelector("#dialog-create").close();
+  
 }
 
 function cancelCreate() {

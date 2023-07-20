@@ -20,7 +20,7 @@ function preparePosts(data) {
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const post = data[key];
-      post.id = key
+      post.id = key;
       postsArr.push(post);
     }
   }
@@ -47,12 +47,37 @@ function prepareSpotters(data) {
   for (const key in data) {
     if (data.hasOwnProperty(key)) {
       const spotter = data[key];
-      spotter.id = key
+      spotter.id = key;
       spottersArr.push(spotter);
     }
   }
   // console.log(postsArr);
   return spottersArr;
+}
+
+async function creatPostObject(commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter) {
+  const postObjectToCreate = {
+    commonName: commonName,
+    nameLatin: nameLatin,
+    image: image,
+    map: map,
+    areaFound: areaFound,
+    description: description,
+    recognition: recognition,
+    edible: Boolean(edible),
+    poisonous: Boolean(poisonous),
+    seasonStart: seasonStart,
+    seasonEnd: seasonEnd,
+    confusedWith: confusedWith,
+    spotter: spotter,
+  };
+
+  const json = JSON.stringify(postObjectToCreate);
+  const response = await fetch(`${endpoint}/post.json`, { method: "POST", body: json });
+
+  console.log(response);
+  
+  return response;
 }
 
 // ---------- Updates post in database ---------- \\
@@ -84,4 +109,4 @@ async function deletePost(id) {
   return response;
 }
 
-export { getposts, getSpotters, deletePost, updatePostObject };
+export { getposts, getSpotters, deletePost, creatPostObject, updatePostObject };
