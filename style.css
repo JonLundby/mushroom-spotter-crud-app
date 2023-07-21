@@ -3,7 +3,8 @@
      --header-font-family: "Moirai One", cursive;
      --body-color: rgb(31, 99, 43);
      --secondary-main-color: rgba(90, 203, 72, 0.501);
-     --btn-bg-color: rgba(124, 86, 14, 0.781);
+     --btn-bg-color: rgba(60, 76, 40, 0.781);
+     --btn-bg-color-hover: rgba(78, 98, 54, 0.781);
      --dialog-bg-color: rgb(60, 138, 48);
 }
 
@@ -30,6 +31,27 @@ h1 {
     margin: auto;
     vertical-align: baseline;
 }
+
+#create-btn-main {
+    width: 180px;
+    height: 50px;
+}
+
+button {
+    background-color:var(--btn-bg-color);
+    color: rgb(212, 231, 208);
+    height: 35px;
+    width: 90px;
+    margin: 10px;
+    font-size: 1.05rem;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: var(--btn-bg-color-hover);
+}
+
+
 
 /* ---------- OPTION BUTTONS CONTAINER ---------- */
 #option-btns-container {
@@ -73,15 +95,6 @@ img {
     width: 20vw;
     height: 30vh;
 }
-
-button {
-    background-color:var(--btn-bg-color);
-    color: aliceblue;
-    height: 35px;
-    width: 90px;
-    margin: 10px;
-}
-
 
 /* ---------- CLOSE BTN ---------- */
 .close {
