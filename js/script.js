@@ -13,16 +13,16 @@ async function startApp() {
   updateGrid();
 
   // ---------- Eventlisteners ---------- \\
-  //create
+  //create(post)
   document.querySelector("#create-btn-main").addEventListener("click", showCreateClicked);
   document.querySelector("#create-mushroom-form").addEventListener("submit", createFormClicked);
   document.querySelector("#create-mushroom-form .btn-cancel").addEventListener("click", cancelCreate);
 
-  //update
+  //update(put)
   document.querySelector("#update-mushroom-form").addEventListener("submit", updateClicked);
   document.querySelector("#update-mushroom-form .btn-cancel").addEventListener("click", cancelUpdate);
 
-  //delete
+  //delete(delete)
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
   document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
 }
@@ -72,6 +72,7 @@ function generatePost(postObject) {
     deletePostClicked();
   });
 
+  // ---------- showDetails / showing a dialog window showing data from the mushroom object clicked ---------- \\
   function showDetails() {
     //Resetting the 'confused with' section
     document.querySelector("#detail-confused-with").innerHTML = "";
@@ -120,6 +121,7 @@ function generatePost(postObject) {
     document.querySelector("#dialog-detail-view").showModal();
   }
 
+  // ---------- updatePostClicked / showing a dialog window with form filled with data from the mushroom object clicked ---------- \\
   function updatePostClicked() {
     //form shorthand
     const updateForm = document.querySelector("#update-mushroom-form");
@@ -146,6 +148,7 @@ function generatePost(postObject) {
     document.querySelector("#dialog-update").showModal();
   }
 
+  // ---------- deletePostClicked / showing a dialog window with form filled with data from the mushroom object clicked ---------- \\
   function deletePostClicked() {
     document.querySelector("#common-name-to-delete").textContent = postObject.commonName;
     document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
@@ -154,12 +157,13 @@ function generatePost(postObject) {
 }
 //generatePost codeblock end
 
-
+// ---------- showCreateClicked / showing a form with empty data inputs corresponding to a mushroom object ---------- \\
 function showCreateClicked(event) {
   event.preventDefault();
   document.querySelector("#dialog-create").showModal();
 }
 
+// ---------- createFormClicked / sending the propagated data to creatPostObject, creating a response and updating grid ---------- \\
 async function createFormClicked(event) {
   console.log("create form clicked")
   event.preventDefault();
@@ -221,14 +225,17 @@ async function createFormClicked(event) {
   
 }
 
+// ---------- cancelCreate / closes the create dialog window ---------- \\
 function cancelCreate() {
   document.querySelector("#dialog-create").close();
 }
 
+// ---------- closeDetailView / closes the detail dialog window ---------- \\
 function closeDetailView() {
   document.querySelector("#dialog-detail-view").close();
 }
 
+// ---------- updateClicked / sending the propagated data to updatePostObject, creating a response and updating grid ---------- \\
 async function updateClicked(event) {
   console.log("update post was clicked");
   //form shorthand
@@ -286,16 +293,19 @@ async function updateClicked(event) {
   }
 }
 
+// ---------- cancelUpdate / closes the update dialog window ---------- \\
 function cancelUpdate() {
   console.log("update canceled!");
   document.querySelector("#dialog-update").close();
 }
 
+// ---------- cancelDelete / closes the delete dialog window ---------- \\
 function cancelDelete() {
   console.log("delete canceled!");
   document.querySelector("#dialog-delete").close();
 }
 
+// ---------- executeDelete / sending the data-id to deletePost, creating response and updating the grid---------- \\
 async function executeDelete(event) {
   console.log("executeDelete called!");
   const id = event.target.getAttribute("data-id");

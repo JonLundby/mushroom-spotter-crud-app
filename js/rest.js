@@ -1,7 +1,7 @@
 //URL variable reference to database
 const endpoint = "https://mushroom-spotter-data-default-rtdb.europe-west1.firebasedatabase.app/";
 
-// ----------getPosts / fetching json data from firebase ---------- \\
+// ----------getPosts / fetching the endpoint json data for posts ---------- \\
 async function getposts() {
   const response = await fetch(`${endpoint}/post.json`);
   const data = await response.json();
@@ -14,7 +14,7 @@ async function getposts() {
   }
 }
 
-// ---------- Pushes each data key into new posts array and adds .id property to each object  ---------- \\
+// ---------- preparePosts / Pushes each data key into new posts array and adds .id property to each object  ---------- \\
 function preparePosts(data) {
   const postsArr = [];
   for (const key in data) {
@@ -28,6 +28,7 @@ function preparePosts(data) {
   return postsArr;
 }
 
+// ---------- getSpotters / fetching the endpoint json data for spotters---------- \\
 async function getSpotters() {
   const response = await fetch(`${endpoint}/spotter.json`);
   const data = await response.json();
@@ -55,6 +56,7 @@ function prepareSpotters(data) {
   return spottersArr;
 }
 
+// ---------- creatPostObject / creating(posting) post into the endpoint data---------- \\
 async function creatPostObject(commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter) {
   const postObjectToCreate = {
     commonName: commonName,
@@ -76,11 +78,11 @@ async function creatPostObject(commonName, nameLatin, image, map, areaFound, des
   const response = await fetch(`${endpoint}/post.json`, { method: "POST", body: json });
 
   console.log(response);
-  
+
   return response;
 }
 
-// ---------- Updates post in database ---------- \\
+// ---------- updatePostObject / updating(putting) post in the endpoint data---------- \\
 async function updatePostObject(id, commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter) {
   const postObjectToUpdate = {
     commonName,
@@ -103,7 +105,7 @@ async function updatePostObject(id, commonName, nameLatin, image, map, areaFound
   return response;
 }
 
-// ---------- Deletes post from database ---------- \\
+// ---------- deletePost / Deletes post from database ---------- \\
 async function deletePost(id) {
   const response = await fetch(`${endpoint}/post/${id}.json`, { method: "DELETE" });
   return response;
