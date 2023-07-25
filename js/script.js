@@ -25,6 +25,10 @@ async function startApp() {
   //delete(delete)
   document.querySelector("#delete-post-form .btn-cancel").addEventListener("click", cancelDelete);
   document.querySelector("#delete-post-form").addEventListener("submit", executeDelete);
+
+  //search
+  document.querySelector("#search-text").addEventListener("keyup", inputSearchChanged);
+  document.querySelector("#search-text").addEventListener("search", inputSearchChanged);
 }
 
 // ---------- updateGrid / updating the posts grid ---------- \\
@@ -315,4 +319,25 @@ async function executeDelete(event) {
     console.log("mushroom post deleted");
     updateGrid();
   }
+}
+
+function inputSearchChanged() {
+  const value = this.value;
+  const postsSearched = postSearch(value);
+
+  showSpottersPosts(postsSearched);
+}
+
+function postSearch(value) {
+  value = value.toLowerCase();
+
+  const searchResult = posts.filter(checkMushroomName);
+
+  function checkMushroomName(post) {
+    console.log(post)
+    const commonName = post.commonName.toLowerCase();
+    return commonName.includes(value);
+  }
+
+  return searchResult;
 }
