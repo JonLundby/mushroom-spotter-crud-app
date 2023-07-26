@@ -169,10 +169,10 @@ function showCreateClicked(event) {
 
 // ---------- createFormClicked / sending the propagated data to creatPostObject, creating a response and updating grid ---------- \\
 async function createFormClicked(event) {
-  console.log("create form clicked")
+  console.log("create form clicked");
   event.preventDefault();
   const form = event.target;
-  
+
   const commonName = form.commonName.value;
   const nameLatin = form.nameLatin.value;
   const image = form.image.value;
@@ -199,21 +199,7 @@ async function createFormClicked(event) {
 
   console.log("variables should be set?");
 
-  const response = await creatPostObject(
-    commonName,
-    nameLatin,
-    image,
-    map,
-    areaFound,
-    description,
-    recognition,
-    edible,
-    poisonous,
-    seasonStart,
-    seasonEnd,
-    confusedWith,
-    spotter
-  );
+  const response = await creatPostObject(commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter);
 
   console.log(response);
 
@@ -226,7 +212,6 @@ async function createFormClicked(event) {
   }
 
   document.querySelector("#dialog-create").close();
-  
 }
 
 // ---------- cancelCreate / closes the create dialog window ---------- \\
@@ -321,6 +306,7 @@ async function executeDelete(event) {
   }
 }
 
+// ---------- inputSearchChanged / passes the search value to postSearch and calls showSpottersPosts with search results---------- \\
 function inputSearchChanged() {
   const value = this.value;
   const postsSearched = postSearch(value);
@@ -328,6 +314,7 @@ function inputSearchChanged() {
   showSpottersPosts(postsSearched);
 }
 
+// ---------- postSearch / searches for post with correlation between commonName/nameLatin and the search value---------- \\
 function postSearch(value) {
   value = value.toLowerCase();
 
