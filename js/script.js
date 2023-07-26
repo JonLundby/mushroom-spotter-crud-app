@@ -334,8 +334,8 @@ function postSearch(value) {
   const searchResult = posts.filter(checkMushroomName);
 
   function checkMushroomName(post) {
-    console.log(post)
-    const commonName = post.commonName.toLowerCase();
+    const commonName = post.commonName.toLowerCase() + post.nameLatin.toLowerCase();
+
     return commonName.includes(value);
   }
 
