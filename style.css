@@ -177,12 +177,17 @@ button:hover {
 
 /* ---------- update view/dialog ---------- */
 #dialog-create {
-  background-color: var(--dialog-bg-color);
-  width: 600px;
+    background-color: var(--dialog-bg-color);
+    width: 600px;
 }
 
 #create-mushroom-form {
-  display: grid;
-  grid-template-columns: auto;
-  margin: 20px;
+    display: grid;
+    grid-template-columns: auto;
+    margin: 20px;
+}
+
+/* ---------- delete view/dialog ---------- */
+#dialog-delete {
+    background-color: var(--dialog-bg-color);
 }
