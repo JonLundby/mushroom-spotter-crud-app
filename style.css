@@ -1,126 +1,129 @@
 /* ---------- ROOT VARIABLES ---------- */
 :root {
-     --header-font-family: "Moirai One", cursive;
-     --body-color: rgb(31, 99, 43);
-     --secondary-main-color: rgba(90, 203, 72, 0.501);
-     --btn-bg-color: rgba(60, 76, 40, 0.781);
-     --btn-bg-color-hover: rgba(78, 98, 54, 0.781);
-     --dialog-bg-color: rgb(60, 138, 48);
+  --header-font-family: "Moirai One", cursive;
+  --body-color: rgb(31, 99, 43);
+  --secondary-main-color: rgba(90, 203, 72, 0.501);
+  --btn-bg-color: rgba(60, 76, 40, 0.781);
+  --btn-bg-color-hover: rgba(78, 98, 54, 0.781);
+  --dialog-bg-color: rgb(60, 138, 48);
 }
 
 /* ---------- MAIN ELEMENTS ---------- */
 body {
-    background-color:var(--body-color);
-    user-select: none;
+  background-color: var(--body-color);
+  user-select: none;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    background-color:var(--secondary-main-color);
-    height: 100px;
-    margin: 20px;
-    margin-bottom: 50px;
-    box-shadow: 2px 3px 12px black;
-    border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-main-color);
+  height: 100px;
+  margin: 20px;
+  margin-bottom: 50px;
+  box-shadow: 2px 3px 12px black;
+  border-radius: 12px;
 }
 
 h1 {
-    font-family: var(--header-font-family);
-    font-size: 3.5rem;
-    margin: auto;
-    vertical-align: baseline;
+  font-family: var(--header-font-family);
+  font-size: 3.5rem;
+  margin: auto;
+  vertical-align: baseline;
 }
 
 #create-btn-main {
-    width: 180px;
-    height: 50px;
+  width: 180px;
+  height: 50px;
 }
 
 button {
-    background-color:var(--btn-bg-color);
-    color: rgb(212, 231, 208);
-    height: 35px;
-    width: 90px;
-    margin: 10px;
-    font-size: 1.05rem;
-    border-radius: 10px;
+  background-color: var(--btn-bg-color);
+  color: rgb(212, 231, 208);
+  height: 35px;
+  width: 90px;
+  margin: 10px;
+  font-size: 1.05rem;
+  border-radius: 10px;
 }
 
 button:hover {
-    background-color: var(--btn-bg-color-hover);
+  background-color: var(--btn-bg-color-hover);
 }
-
-
 
 /* ---------- OPTION BUTTONS CONTAINER ---------- */
 #option-btns-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin: 50px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 50px;
 }
 
 /* ---------- POSTS ELEMENTS ---------- */
-#spotter-posts-container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin: 30px;
-    gap: 12px;
-    text-align: center;
+#spotter-posts-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 30px;
+  gap: 12px;
+  text-align: center;
 }
 
 #spotter-posts-container > article {
-    background-color: var(--secondary-main-color);
-    box-shadow: 1px 2px 5px black;
-    border-radius: 20px;
-    opacity: 0.9;
+  background-color: var(--secondary-main-color);
+  box-shadow: 1px 2px 5px black;
+  border-radius: 20px;
+  opacity: 0.9;
 }
 
 #spotter-posts-container > article:hover {
-    box-shadow: 2px 2px 12px black;
-    opacity: 1;
-    animation-name: mushroomArticle;
-    animation-duration: 200ms;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  box-shadow: 2px 2px 12px black;
+  opacity: 1;
+  animation-name: mushroomArticle;
+  animation-duration: 200ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes mushroomArticle {
-    0% {transform: scale(1);}
-    100% {transform: scale(1.015);}
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.015);
+  }
 }
 
-img {
-    object-fit: scale-down;
-    width: 20vw;
-    height: 30vh;
+#grid-img {
+  object-fit: scale-down;
+  width: 20vw;
+  height: 30vh;
 }
 
 /* ---------- CLOSE BTN ---------- */
 .close {
-    position: absolute;
-    right: 48px;
-    top: 24px;
-    width: 24px;
-    height: 24px;
-    opacity: 0.2;
+  position: absolute;
+  right: 48px;
+  top: 24px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.2;
 }
 
 .close:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
-.close:before, .close:after {
+.close:before,
+.close:after {
   position: absolute;
   left: 18px;
-  content: ' ';
+  content: " ";
   height: 40px;
   width: 3px;
   background-color: black;
 }
 
 .close:before {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .close:after {
@@ -129,52 +132,57 @@ img {
 
 /* ---------- detail view/dialog ---------- */
 #dialog-detail-view {
-    background-color: var(--dialog-bg-color);
-    width: 80%;
-    height: 80%;
+  background-color: var(--dialog-bg-color);
+  width: 80%;
+  height: 80%;
 }
 
 #dialog-detail-main-section {
-    display: grid;
-    grid-template-areas: "a a"
+  display: grid;
+  grid-template-areas:
+    "a a"
     "b c"
-                         "b c";
-    gap: 8px;
+    "b c";
+  gap: 8px;
 }
 
-#grid-a{
-    grid-area: a;
-    text-align: center;
+#grid-a {
+  grid-area: a;
+  text-align: center;
 }
 
-#grid-b{
-    grid-area: b;
+#grid-b {
+  grid-area: b;
 }
 
-#grid-c{
-    grid-area: c;
+#grid-c {
+  grid-area: c;
+}
+
+#detail-image {
+  width: 620px;
 }
 
 /* ---------- update view/dialog ---------- */
 #dialog-update {
-    background-color: var(--dialog-bg-color);
-    width: 600px;
+  background-color: var(--dialog-bg-color);
+  width: 600px;
 }
 
 #update-mushroom-form {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  margin: 20px;
 }
 
 /* ---------- update view/dialog ---------- */
 #dialog-create {
-    background-color: var(--dialog-bg-color);
-    width: 600px;
+  background-color: var(--dialog-bg-color);
+  width: 600px;
 }
 
 #create-mushroom-form {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  margin: 20px;
 }

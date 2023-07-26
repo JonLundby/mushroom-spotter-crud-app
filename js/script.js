@@ -55,7 +55,7 @@ function generatePost(postObject) {
                         <article id="article-mushroom-post">
                             <h2>${postObject.commonName}<h2>
                             <h3>${postObject.nameLatin}</h3>
-                            <img src=${postObject.image}>
+                            <img src=${postObject.image} id="grid-img">
                             <p>${postObject.areaFound}</p>
                             <button class="btn-update">Update</button>
                             <button class="btn-delete">Delete</button>
