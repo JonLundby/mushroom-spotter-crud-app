@@ -332,6 +332,19 @@ function postSearch(value) {
   return searchResult;
 }
 
-function sortBy() {
-  console.log("sorting was changed")
+function sortBy(event) {
+  const value = event.target.value;
+  console.log(`sorting was changed to ${value}`);
+
+  if (value === "none") {
+    updateGrid();
+  } else if (value === "common-name") {
+    posts.sort((post1, post2) => post1.commonName.localeCompare(post2.commonName));
+    showSpottersPosts(posts);
+  } else if (value === "latin-name") {
+    posts.sort((post1, post2) => post1.nameLatin.localeCompare(post2.nameLatin));
+    showSpottersPosts(posts);
+  } else if (value === "date-spotted") {
+    console.log("date spotted is not yet a property of posts")
+  }
 }
