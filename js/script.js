@@ -29,6 +29,9 @@ async function startApp() {
   //search
   document.querySelector("#search-text").addEventListener("keyup", inputSearchChanged);
   document.querySelector("#search-text").addEventListener("search", inputSearchChanged);
+
+  //sort
+  document.querySelector("#sort-by").addEventListener("change", sortBy);
 }
 
 // ---------- updateGrid / updating the posts grid ---------- \\
@@ -327,4 +330,8 @@ function postSearch(value) {
   }
 
   return searchResult;
+}
+
+function sortBy() {
+  console.log("sorting was changed")
 }

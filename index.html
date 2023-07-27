@@ -21,7 +21,16 @@
     <main>
       <!-- buttons create, search, filter -->
       <section id="option-btns-container">
-        <label for="search-text">Search: <input type="text" id="search-text" placeholder="search..." /></label>
+        <div>
+          <label for="search-text">Search: <input type="text" id="search-text" placeholder="search..." /></label>
+          <label for="sort">Sort by:
+            <select name="sort-by" id="sort-by">
+              <option value="common-name">Common name</option>
+              <option value="latin-name">Latin name</option>
+              <option value="date-spotted">Date spotted</option>
+            </select>
+          </label>
+        </div>
         <button id="create-btn-main">Create new post</button>
         <fieldset>
           <legend>Filters</legend>
