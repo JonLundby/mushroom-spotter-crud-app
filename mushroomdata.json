@@ -13,7 +13,8 @@
       "seasonStart": "May",
       "seasonEnd": "October",
       "confusedWith": ["Yellow Stainer (Agaricus xanthodermus)", "Other amanitas when young"],
-      "spotter": "01"
+      "spotter": "01",
+      "dateSpotted": "2023-06-22"
     },
     "01": {
       "commonName": "Orange Grisette",
@@ -28,7 +29,8 @@
       "seasonStart": "July",
       "seasonEnd": "October",
       "confusedWith": ["Tawny Grisette (Amanita fulva)"],
-      "spotter": "01"
+      "spotter": "01",
+      "dateSpotted": "2020-08-30"
     },
     "02": {
       "commonName": "Scarletina Bolete",
@@ -43,7 +45,8 @@
       "seasonStart": "July",
       "seasonEnd": "October",
       "confusedWith": ["Lurid Bolete (Suillellus luridus)", "Devil’s Bolete (Rubroboletus satanas)", "Deceiving bolete (Suillellus queletii)"],
-      "spotter": "00"
+      "spotter": "00",
+      "dateSpotted": "2020-10-02"
     },
     "03": {
       "commonName": "Old Man of the Woods",
@@ -58,7 +61,8 @@
       "seasonStart": "July",
       "seasonEnd": "November",
       "confusedWith": ["none"],
-      "spotter": "01"
+      "spotter": "01",
+      "dateSpotted": "2022-11-01"
     },
     "04": {
       "commonName": "Devil's Bolete",
@@ -73,7 +77,8 @@
       "seasonStart": "June",
       "seasonEnd": "October",
       "confusedWith": ["Bitter Beech Bolete (Caloboletus calopus)", "Lurid Bolete (Suillellus luridus)", "Bilious bolete (Rubroboletus legaliae)"],
-      "spotter": "00"
+      "spotter": "00",
+      "dateSpotted": "2023-08-14"
     },
     "05": {
       "commonName": "King Alfred's Cakes",
@@ -88,7 +93,24 @@
       "seasonStart": "January",
       "seasonEnd": "January",
       "confusedWith": ["none"],
-      "spotter": "01"
+      "spotter": "01",
+      "dateSpotted": "2021-01-21"
+    },
+    "06": {
+      "commonName": "Chanterelle",
+      "nameLatin": "Cantharellus cibarius",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Chanterelles_-_geograph.org.uk_-_920622.jpg",
+      "map": "https://www.google.com/maps/@52.0539905,-1.8053633,1184m/data=!3m1!1e3?entry=ttu",
+      "areaFound": "Near National Trust - Dover's Hill",
+      "description": "A general description of Cantharellus cibarius",
+      "recognition": "description of visible characteristics for recognition",
+      "edible": true,
+      "poisonous": false,
+      "seasonStart": "May",
+      "seasonEnd": "November",
+      "confusedWith": ["False Chanterelle (Hygrophoropsis aurantiaca)", "Jack O’Lantern (Omphalotus illudens)", "Amethyst Chanterelle (Cantharellus amethysteus)"],
+      "spotter": "00",
+      "dateSpotted": "2018-05-29"
     }
   },
 
