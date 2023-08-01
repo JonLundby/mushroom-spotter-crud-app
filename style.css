@@ -20,7 +20,7 @@ header {
   background-color: var(--secondary-main-color);
   height: 100px;
   margin: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   box-shadow: 2px 3px 12px black;
   border-radius: 12px;
 }
@@ -54,8 +54,18 @@ button:hover {
 /* ---------- OPTION BUTTONS CONTAINER ---------- */
 #option-btns-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  margin: 50px;
+  grid-template-columns: 33% 33% 33%;
+  margin: 10px 100px 10px 100px; 
+}
+
+#filters-fieldset {
+  grid-column: 1 / 4;
+}
+
+.options-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ---------- POSTS ELEMENTS ---------- */

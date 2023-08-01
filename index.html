@@ -21,8 +21,13 @@
     <main>
       <!-- buttons create, search, filter -->
       <section id="option-btns-container">
-        <div>
+        <div class="options-item">
           <label for="search-text">Search: <input type="text" id="search-text" placeholder="search..." /></label>
+        </div>
+        <div class="options-item">
+          <button id="create-btn-main">Create new post</button>
+        </div>
+        <div class="options-item">
           <label for="sort">Sort by:
             <select name="sort-by" id="sort-by">
               <option value="none">None</option>
@@ -32,8 +37,7 @@
             </select>
           </label>
         </div>
-        <button id="create-btn-main">Create new post</button>
-        <fieldset>
+        <fieldset id="filters-fieldset">
           <legend>Filters</legend>
           <input type="checkbox" name="" id="" />
           <input type="checkbox" name="" id="" />
