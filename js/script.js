@@ -4,7 +4,7 @@ import { getposts, getSpotters, deletePost, creatPostObject, updatePostObject } 
 
 let posts;
 let spotters;
-
+let dateNow;
 window.addEventListener("load", startApp);
 
 // ---------- startApp / initial start function ---------- \\
@@ -120,6 +120,7 @@ function generatePost(postObject) {
     }
 
     document.querySelector("#detail-area-spotted").textContent = postObject.areaFound;
+    document.querySelector("#date-spotted").textContent = postObject.dateSpotted;
 
     // link to google maps image somehow???
     // document.querySelector("#detail-area-url").src = postObject.map;
