@@ -148,6 +148,7 @@ function generatePost(postObject) {
     updateForm.seasonEnd.value = postObject.seasonEnd;
     updateForm.confusedWith.value = postObject.confusedWith;
     updateForm.spotter.value = postObject.spotter; //to-do; needs to refer to spotter name or id
+    updateForm.dateSpotted.value = postObject.dateSpotted;
 
     //setting the current postObjects id to the form
     updateForm.setAttribute("data-id", postObject.id);
@@ -246,17 +247,18 @@ async function updateClicked(event) {
   const seasonStart = form.seasonStart.value; //WORKING
   const seasonEnd = form.seasonEnd.value; //WORKING
   const confusedWith = confusedWithArr(); ////WORKING (to-do; optimate for spelling errors)
-
+  
   function confusedWithArr() {
     let arr = [];
     const str = form.confusedWith.value;
-
+    
     arr = str.split(", ");
-
+    
     return arr;
   }
-
+  
   const spotter = form.spotter.value;
+  const dateSpotted = form.dateSpotted.value;
 
   const id = form.getAttribute("data-id");
 
@@ -274,7 +276,8 @@ async function updateClicked(event) {
     seasonStart,
     seasonEnd,
     confusedWith,
-    spotter
+    spotter,
+    dateSpotted
   );
 
   if (response.ok) {

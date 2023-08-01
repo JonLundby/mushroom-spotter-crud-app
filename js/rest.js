@@ -83,7 +83,23 @@ async function creatPostObject(commonName, nameLatin, image, map, areaFound, des
 }
 
 // ---------- updatePostObject / updating(putting) post in the endpoint data---------- \\
-async function updatePostObject(id, commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter) {
+async function updatePostObject(
+  id,
+  commonName,
+  nameLatin,
+  image,
+  map,
+  areaFound,
+  description,
+  recognition,
+  edible,
+  poisonous,
+  seasonStart,
+  seasonEnd,
+  confusedWith,
+  spotter,
+  dateSpotted
+) {
   const postObjectToUpdate = {
     commonName,
     nameLatin,
@@ -98,6 +114,7 @@ async function updatePostObject(id, commonName, nameLatin, image, map, areaFound
     seasonEnd,
     confusedWith,
     spotter,
+    dateSpotted,
   };
 
   const json = JSON.stringify(postObjectToUpdate);
