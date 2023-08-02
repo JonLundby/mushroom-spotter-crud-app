@@ -201,10 +201,27 @@ async function createFormClicked(event) {
   }
 
   const spotter = form.spotter.value;
+  const dateSpotted = form.dateSpotted.value;
+
 
   console.log("variables should be set?");
 
-  const response = await creatPostObject(commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter);
+  const response = await creatPostObject(
+    commonName,
+    nameLatin,
+    image,
+    map,
+    areaFound,
+    description,
+    recognition,
+    edible,
+    poisonous,
+    seasonStart,
+    seasonEnd,
+    confusedWith,
+    spotter,
+    dateSpotted
+  );
 
   console.log(response);
 

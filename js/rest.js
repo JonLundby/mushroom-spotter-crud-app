@@ -57,7 +57,22 @@ function prepareSpotters(data) {
 }
 
 // ---------- creatPostObject / creating(posting) post into the endpoint data---------- \\
-async function creatPostObject(commonName, nameLatin, image, map, areaFound, description, recognition, edible, poisonous, seasonStart, seasonEnd, confusedWith, spotter) {
+async function creatPostObject(
+  commonName,
+  nameLatin,
+  image,
+  map,
+  areaFound,
+  description,
+  recognition,
+  edible,
+  poisonous,
+  seasonStart,
+  seasonEnd,
+  confusedWith,
+  spotter,
+  dateSpotted
+) {
   const postObjectToCreate = {
     commonName: commonName,
     nameLatin: nameLatin,
@@ -72,6 +87,7 @@ async function creatPostObject(commonName, nameLatin, image, map, areaFound, des
     seasonEnd: seasonEnd,
     confusedWith: confusedWith,
     spotter: spotter,
+    dateSpotted: dateSpotted
   };
 
   const json = JSON.stringify(postObjectToCreate);
