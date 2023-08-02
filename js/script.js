@@ -3,8 +3,8 @@
 import { getposts, getSpotters, deletePost, creatPostObject, updatePostObject } from "./rest.js";
 
 let posts;
+let postsFiltered;
 let spotters;
-let dateNow;
 window.addEventListener("load", startApp);
 
 // ---------- startApp / initial start function ---------- \\
@@ -32,6 +32,11 @@ async function startApp() {
 
   //sort
   document.querySelector("#sort-by").addEventListener("change", sortBy);
+
+  //filters
+  document.querySelector("#edible").addEventListener("change", filterPosts)
+  document.querySelector("#poisonous").addEventListener("change", filterPosts);
+  document.querySelector("#recentWeek").addEventListener("change", filterPosts);
 }
 
 // ---------- updateGrid / updating the posts grid ---------- \\
@@ -368,4 +373,34 @@ function sortBy(event) {
   } else if (value === "date-spotted") {
     console.log("date spotted is not yet a property of posts")
   }
+}
+
+// ---------- filterPosts / checks if filter inputs are checked and  sets postsFiltered to a filtered list ---------- \\
+function filterPosts() {
+  console.log("A filter was checked/unchecked...")
+  const edible = document.querySelector("#edible");
+  const poisonous = document.querySelector("#poisonous");
+  const recentWeek = document.querySelector("#recentWeek");
+
+  // let now = new date();
+  // let today = now.getday();
+  // console.log(today)
+
+  if (edible.checked || poisonous.checked || recentWeek.checked) {
+    postsFiltered = posts.filter(checkFilters);
+    showSpottersPosts(postsFiltered);
+  } else {
+    showSpottersPosts(posts);
+  }
+
+  function checkFilters(post) {
+    if (edible.checked && post.edible) {
+      return post
+    } else if (poisonous.checked && post.poisonous) {
+      return post
+    } else if (recentWeek.checked && post.dateSpotted ) {
+      
+    }
+  }
+
 }
