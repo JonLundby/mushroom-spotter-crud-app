@@ -34,7 +34,7 @@ async function startApp() {
   document.querySelector("#sort-by").addEventListener("change", sortBy);
 
   //filters
-  document.querySelector("#edible").addEventListener("change", filterPosts)
+  document.querySelector("#edible").addEventListener("change", filterPosts);
   document.querySelector("#poisonous").addEventListener("change", filterPosts);
   document.querySelector("#recentWeek").addEventListener("change", filterPosts);
 }
@@ -208,7 +208,6 @@ async function createFormClicked(event) {
   const spotter = form.spotter.value;
   const dateSpotted = form.dateSpotted.value;
 
-
   console.log("variables should be set?");
 
   const response = await creatPostObject(
@@ -269,16 +268,16 @@ async function updateClicked(event) {
   const seasonStart = form.seasonStart.value; //WORKING
   const seasonEnd = form.seasonEnd.value; //WORKING
   const confusedWith = confusedWithArr(); ////WORKING (to-do; optimate for spelling errors)
-  
+
   function confusedWithArr() {
     let arr = [];
     const str = form.confusedWith.value;
-    
+
     arr = str.split(", ");
-    
+
     return arr;
   }
-  
+
   const spotter = form.spotter.value;
   const dateSpotted = form.dateSpotted.value;
 
@@ -371,20 +370,16 @@ function sortBy(event) {
     posts.sort((post1, post2) => post1.nameLatin.localeCompare(post2.nameLatin));
     showSpottersPosts(posts);
   } else if (value === "date-spotted") {
-    console.log("date spotted is not yet a property of posts")
+    console.log("date spotted is not yet a property of posts");
   }
 }
 
 // ---------- filterPosts / checks if filter inputs are checked and  sets postsFiltered to a filtered list ---------- \\
 function filterPosts() {
-  console.log("A filter was checked/unchecked...")
+  console.log("A filter was checked/unchecked...");
   const edible = document.querySelector("#edible");
   const poisonous = document.querySelector("#poisonous");
   const recentWeek = document.querySelector("#recentWeek");
-
-  // let now = new date();
-  // let today = now.getday();
-  // console.log(today)
 
   if (edible.checked || poisonous.checked || recentWeek.checked) {
     postsFiltered = posts.filter(checkFilters);
@@ -394,13 +389,16 @@ function filterPosts() {
   }
 
   function checkFilters(post) {
+    //date variables
+    let postDateObject = new Date(post.dateSpotted) - 0; //post date is converted to milliseconds since new years 1970
+    let weekAgo = new Date() - 604800000; //now - a week in milliseconds
+
     if (edible.checked && post.edible) {
-      return post
+      return post;
     } else if (poisonous.checked && post.poisonous) {
-      return post
-    } else if (recentWeek.checked && post.dateSpotted ) {
-      
+      return post;
+    } else if (recentWeek.checked && postDateObject > weekAgo) {
+      return post;
     }
   }
-
 }
