@@ -393,11 +393,24 @@ function filterPosts() {
     let postDateObject = new Date(post.dateSpotted) - 0; //post date is converted to milliseconds since new years 1970
     let weekAgo = new Date() - 604800000; //now - a week in milliseconds
 
-    if (edible.checked && post.edible) {
+    // 1 checked
+    if (edible.checked && post.edible && !poisonous.checked && !recentWeek.checked) {
       return post;
-    } else if (poisonous.checked && post.poisonous) {
+    } else if (poisonous.checked && post.poisonous && !edible.checked && !recentWeek.checked) {
       return post;
-    } else if (recentWeek.checked && postDateObject > weekAgo) {
+    } else if (recentWeek.checked && postDateObject > weekAgo && !poisonous.checked && !edible.checked) {
+      return post;
+    }
+    // 2 checked
+    else if (recentWeek.checked && postDateObject > weekAgo && poisonous.checked && post.poisonous && !edible.checked) {
+      return post;
+    } else if (recentWeek.checked && postDateObject > weekAgo && !poisonous.checked && edible.checked && post.edible) {
+      return post;
+    } else if (!recentWeek.checked && postDateObject > weekAgo && poisonous.checked && post.poisonous && edible.checked && post.edible) {
+      return post;
+    }
+    // 3 checked
+    else if (recentWeek.checked && postDateObject > weekAgo && poisonous.checked && post.poisonous && edible.checked && post.edible) {
       return post;
     }
   }
