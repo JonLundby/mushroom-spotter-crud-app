@@ -45,6 +45,7 @@ async function updateGrid() {
   spotters = await getSpotters();
   console.log(posts);
   console.log(spotters);
+  console.table(posts, posts);
 
   showSpottersPosts(posts);
 }
@@ -174,12 +175,13 @@ function generatePost(postObject) {
 // ---------- showCreateClicked / showing a form with empty data inputs corresponding to a mushroom object ---------- \\
 function showCreateClicked(event) {
   event.preventDefault();
+  console.log("%cCreate clicked", "color: green;font-size: 1.5rem");
   document.querySelector("#dialog-create").showModal();
 }
 
 // ---------- createFormClicked / sending the propagated data to creatPostObject, creating a response and updating grid ---------- \\
 async function createFormClicked(event) {
-  console.log("create form clicked");
+  console.log("%cCreate form clicked", "color: green;font-size: 1.5rem");
   event.preventDefault();
   const form = event.target;
 
@@ -230,7 +232,8 @@ async function createFormClicked(event) {
   console.log(response);
 
   if (response.ok) {
-    console.log("create succes!");
+    console.log("%cResponse: 200(ok)", "color: green;font-size: 1.5rem");
+    console.log("%cCreate succes!", "color: green;font-size: 1.5rem");
     updateGrid();
   } else {
     console.log("create failed");
