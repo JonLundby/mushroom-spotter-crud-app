@@ -45,7 +45,7 @@ async function updateGrid() {
   spotters = await getSpotters();
   console.log(posts);
   console.log(spotters);
-  console.table(posts, posts);
+  // console.table(posts, posts);
 
   showSpottersPosts(posts);
 }
@@ -126,10 +126,10 @@ function generatePost(postObject) {
     }
 
     document.querySelector("#detail-area-spotted").textContent = postObject.areaFound;
+    // link to google maps image somehow???
+    document.querySelector("#detail-area-url").href = postObject.map;
     document.querySelector("#date-spotted").textContent = postObject.dateSpotted;
 
-    // link to google maps image somehow???
-    // document.querySelector("#detail-area-url").src = postObject.map;
 
     document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
     document.querySelector("#dialog-detail-view").showModal();
