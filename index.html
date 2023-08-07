@@ -13,13 +13,12 @@
     <title>Mushroom spotter</title>
   </head>
   <body>
-    
     <main>
       <!-- Header -->
       <header>
         <h1>Mushroom spotter</h1>
       </header>
-      
+
       <!-- buttons create, search, filter -->
       <section id="option-btns-container">
         <div class="options-item">
@@ -29,7 +28,8 @@
           <button id="create-btn-main">Create new post</button>
         </div>
         <div class="options-item">
-          <label for="sort">Sort by:
+          <label for="sort"
+            >Sort by:
             <select name="sort-by" id="sort-by">
               <option value="none">None</option>
               <option value="common-name">Common name</option>
@@ -40,29 +40,29 @@
         </div>
         <fieldset id="filters-fieldset">
           <legend>Filters</legend>
-          
+
           <label for="edible">Edible</label>
           <input type="checkbox" name="edible" id="edible" />
-          
+
           <label for="poisonous">Poisonous</label>
           <input type="checkbox" name="poisonous" id="poisonous" />
-          
+
           <label for="recentWeek">Recent week</label>
           <input type="checkbox" name="recentWeek" id="recentWeek" />
         </fieldset>
       </section>
-      
+
       <!-- Posts grid -->
       <section id="spotter-posts-container">
         <!-- htmlSpotterPost inserts here -->
       </section>
-      
+
       <!-- Footer -->
       <footer>
         <h4>This is a summer vacation project and is not intended for real use!</h4>
       </footer>
     </main>
-    
+
     <!-- Dialog/Modal detail view -->
     <dialog id="dialog-detail-view">
       <p id="dialog-x-close" class="close"></p>
@@ -99,6 +99,7 @@
 
     <!-- Dialog/Modal create -->
     <dialog id="dialog-create">
+      <p id="dialog-create-x-close" class="close"></p>
       <!-- to-do -->
       <h3>Create new post</h3>
 
@@ -187,7 +188,7 @@
 
         <!-- date spotted -->
         <label for="create-date-spotted">Date spotted:</label>
-        <input type="date" id="create-date-spotted" name="dateSpotted" min="2000-01-01">
+        <input type="date" id="create-date-spotted" name="dateSpotted" min="2000-01-01" />
 
         <!-- create/cancel btns -->
         <button type="submit">Create</button>
@@ -197,6 +198,8 @@
 
     <!-- Dialog/Modal update -->
     <dialog id="dialog-update">
+      <p id="dialog-update-x-close" class="close"></p>
+
       <!-- header -->
       <h3>Update <span id="common-name-to-update"></span></h3>
       <form method="dialog" id="update-mushroom-form">
@@ -284,7 +287,7 @@
 
         <!-- date spotted -->
         <label for="update-date-spotted">Date spotted:</label>
-        <input type="date" id="update-date-spotted" name="dateSpotted" min="2000-01-01">
+        <input type="date" id="update-date-spotted" name="dateSpotted" min="2000-01-01" />
 
         <!-- update/cancel btn -->
         <button type="button" class="btn-cancel">Cancel</button>

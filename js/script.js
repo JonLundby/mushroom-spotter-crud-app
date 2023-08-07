@@ -137,6 +137,8 @@ function generatePost(postObject) {
 
   // ---------- updatePostClicked / showing a dialog window with form filled with data from the mushroom object clicked ---------- \\
   function updatePostClicked() {
+    document.querySelector("#dialog-update-x-close").addEventListener("click", cancelUpdate);
+
     //form shorthand
     const updateForm = document.querySelector("#update-mushroom-form");
 
@@ -177,6 +179,7 @@ function showCreateClicked(event) {
   event.preventDefault();
   console.log("%cCreate clicked", "color: green;font-size: 1.5rem");
   document.querySelector("#dialog-create").showModal();
+  document.querySelector("#dialog-create-x-close").addEventListener("click", cancelCreate);
 }
 
 // ---------- createFormClicked / sending the propagated data to creatPostObject, creating a response and updating grid ---------- \\
