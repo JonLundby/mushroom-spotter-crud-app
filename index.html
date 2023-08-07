@@ -13,12 +13,13 @@
     <title>Mushroom spotter</title>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <h1>Mushroom spotter</h1>
-    </header>
-
+    
     <main>
+      <!-- Header -->
+      <header>
+        <h1>Mushroom spotter</h1>
+      </header>
+      
       <!-- buttons create, search, filter -->
       <section id="option-btns-container">
         <div class="options-item">
@@ -45,18 +46,23 @@
           
           <label for="poisonous">Poisonous</label>
           <input type="checkbox" name="poisonous" id="poisonous" />
-
+          
           <label for="recentWeek">Recent week</label>
           <input type="checkbox" name="recentWeek" id="recentWeek" />
         </fieldset>
       </section>
-
+      
       <!-- Posts grid -->
       <section id="spotter-posts-container">
         <!-- htmlSpotterPost inserts here -->
       </section>
+      
+      <!-- Footer -->
+      <footer>
+        <h4>This is a summer vacation project and is not intended for real use!</h4>
+      </footer>
     </main>
-
+    
     <!-- Dialog/Modal detail view -->
     <dialog id="dialog-detail-view">
       <p id="dialog-x-close" class="close"></p>

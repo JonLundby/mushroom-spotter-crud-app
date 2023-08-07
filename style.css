@@ -9,11 +9,6 @@
 }
 
 /* ---------- MAIN ELEMENTS ---------- */
-body {
-  background-color: var(--body-color);
-  user-select: none;
-}
-
 header {
   display: flex;
   justify-content: center;
@@ -23,6 +18,11 @@ header {
   margin-bottom: 20px;
   box-shadow: 2px 3px 12px black;
   border-radius: 12px;
+}
+
+body {
+  background-color: var(--body-color);
+  user-select: none;
 }
 
 h1 {
@@ -49,6 +49,17 @@ button {
 
 button:hover {
   background-color: var(--btn-bg-color-hover);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-main-color);
+  /* height: 100px; */
+  margin: 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 3px 12px black;
+  border-radius: 12px;
 }
 
 /* ---------- OPTION BUTTONS CONTAINER ---------- */
