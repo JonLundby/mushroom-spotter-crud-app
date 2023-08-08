@@ -87,7 +87,7 @@ async function creatPostObject(
     seasonEnd: seasonEnd,
     confusedWith: confusedWith,
     spotter: spotter,
-    dateSpotted: dateSpotted
+    dateSpotted: dateSpotted,
   };
 
   const json = JSON.stringify(postObjectToCreate);

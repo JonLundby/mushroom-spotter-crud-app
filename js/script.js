@@ -132,7 +132,7 @@ function generatePost(postObject) {
     //to-do implement google mini map image somehow?
     document.querySelector("#detail-area-url").href = postObject.map;
 
-    document.querySelector("#detail-spotter").textContent = getSpotterName();
+    document.querySelector("#detail-spotter").textContent = setCurrentSpotterId();
 
     document.querySelector("#date-spotted").textContent = postObject.dateSpotted;
 
@@ -177,10 +177,11 @@ function generatePost(postObject) {
     document.querySelector("#dialog-delete").showModal();
   }
 
-  function getSpotterName() {
-    let spotterId = postObject.spotter;
+  function setCurrentSpotterId() {
+    let currentSpotterId = postObject.spotter;
+    let spotterName = `${spotters[currentSpotterId].firstname} ${spotters[currentSpotterId].lastname}`;
 
-    return spotterId;
+    return spotterName;
   }
 }
 //generatePost codeblock end
