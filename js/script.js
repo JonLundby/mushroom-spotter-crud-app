@@ -102,7 +102,9 @@ function generatePost(postObject) {
       document.querySelector("#detail-edible").textContent = "No!";
     }
     if (postObject.poisonous) {
-      document.querySelector("#detail-poisonous").textContent = "Yes, do not eat!";
+      document.querySelector("#detail-poisonous").textContent = "Yes, do NOT eat!";
+    } else if (!postObject.poisonous && !postObject.edible) {
+      document.querySelector("#detail-poisonous").textContent = "No, safe to eat but not very tasty.";
     } else {
       document.querySelector("#detail-poisonous").textContent = "No, safe to eat.";
     }
@@ -129,7 +131,6 @@ function generatePost(postObject) {
     // link to google maps image somehow???
     document.querySelector("#detail-area-url").href = postObject.map;
     document.querySelector("#date-spotted").textContent = postObject.dateSpotted;
-
 
     document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
     document.querySelector("#dialog-detail-view").showModal();
