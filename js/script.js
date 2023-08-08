@@ -128,8 +128,12 @@ function generatePost(postObject) {
     }
 
     document.querySelector("#detail-area-spotted").textContent = postObject.areaFound;
-    // link to google maps image somehow???
+
+    //to-do implement google mini map image somehow?
     document.querySelector("#detail-area-url").href = postObject.map;
+
+    document.querySelector("#detail-spotter").textContent = getSpotterName();
+
     document.querySelector("#date-spotted").textContent = postObject.dateSpotted;
 
     document.querySelector("#dialog-x-close").addEventListener("click", closeDetailView);
@@ -171,6 +175,12 @@ function generatePost(postObject) {
     document.querySelector("#common-name-to-delete").textContent = postObject.commonName;
     document.querySelector("#delete-post-form").setAttribute("data-id", postObject.id);
     document.querySelector("#dialog-delete").showModal();
+  }
+
+  function getSpotterName() {
+    let spotterId = postObject.spotter;
+
+    return spotterId;
   }
 }
 //generatePost codeblock end
@@ -263,18 +273,18 @@ async function updateClicked(event) {
   //form shorthand
   const form = event.target;
 
-  const commonName = form.commonName.value; //WORKING
-  const nameLatin = form.nameLatin.value; //WORKING
-  const image = form.image.value; //WORKING
-  const map = form.map.value; //to-do; should work but propagating is not working...
-  const areaFound = form.areaFound.value; //WORKING
-  const description = form.description.value; //WORKING
-  const recognition = form.recognition.value; //WORKING
-  const edible = form.edible.checked; //WORKING
-  const poisonous = form.poisonous.checked; //WORKING
-  const seasonStart = form.seasonStart.value; //WORKING
-  const seasonEnd = form.seasonEnd.value; //WORKING
-  const confusedWith = confusedWithArr(); ////WORKING (to-do; optimate for spelling errors)
+  const commonName = form.commonName.value;
+  const nameLatin = form.nameLatin.value;
+  const image = form.image.value;
+  const map = form.map.value;
+  const areaFound = form.areaFound.value;
+  const description = form.description.value;
+  const recognition = form.recognition.value;
+  const edible = form.edible.checked;
+  const poisonous = form.poisonous.checked;
+  const seasonStart = form.seasonStart.value;
+  const seasonEnd = form.seasonEnd.value;
+  const confusedWith = confusedWithArr();
 
   function confusedWithArr() {
     let arr = [];
