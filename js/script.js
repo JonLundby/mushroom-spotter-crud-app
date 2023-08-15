@@ -203,7 +203,7 @@ async function createFormClicked(event) {
   const commonName = form.commonName.value;
   const nameLatin = form.nameLatin.value;
   const image = form.image.value;
-  const map = form.map.value;
+  const map = checkMapURL();
   const areaFound = form.areaFound.value;
   const description = form.description.value;
   const recognition = form.recognition.value;
@@ -212,6 +212,15 @@ async function createFormClicked(event) {
   const seasonStart = form.seasonStart.value;
   const seasonEnd = form.seasonEnd.value;
   const confusedWith = confusedWithArr();
+
+  function checkMapURL() {
+    let mapURL = form.map.value;
+    if (mapURL.startsWith("https://www.google.com/maps/")) {
+      return mapURL;
+    } else {
+      return "";
+    }
+  }
 
   function confusedWithArr() {
     let arr = [];
